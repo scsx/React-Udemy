@@ -1,14 +1,12 @@
 // These are Global styles, this one comes after index.css and has priority
 
 body {
-    background: #ebe9db;
+    background: #607d8b;
     padding: 20px;
-    text-align: center;
 }
 
-h1 {
-    font-size: 40px;
-    margin-bottom: 20px;
+h1.doctitle {
+    color: pink;
 }
 
 h2 {
@@ -25,8 +23,25 @@ p {
     cursor: pointer;
 }
 
-.person {
-    margin: 0 0 10px 0;
-    padding: 5px;
-    border: 1px solid #ccc;
+.card {
+    margin-bottom: 20px;
+    background-color: #fff;
+    text-align: center;
+
+    .card-header {
+        h1 {
+            font-size: 40px;
+            margin-bottom: 0;
+        }
+    }
+
+    ul.list-group {
+        border-left: 1px solid rgba(0,0,0,.125);
+        border-right: 1px solid rgba(0,0,0,.125);
+    }
+
+    h2.font-weight-bold {
+        color: #444;
+        margin: 0;
+    }
 }

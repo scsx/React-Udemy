@@ -1,6 +1,6 @@
 // THIS  IS THE MAIN APP.JS FILE, AppFunctional WAS CREATED TO KEEP BOTH, AS IN THE COURSE WAS TO BE CONVERTED TO functional component
 import React, { Component } from 'react';
-import './App.css';
+import './css/App.css';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -27,6 +27,7 @@ class App extends Component {
     }
 
     nameChangedHandler = (event) => {
+        console.log(event);
         this.setState({
             persons: [
                 { name: 'Max', age: 28 },
@@ -37,24 +38,42 @@ class App extends Component {
     }
 
     render() {
+        // inline styles
+        const myStyle = {
+            color: 'gold',
+            fontWeight: 700
+        }
+
         return (
             <div className="App">
-                <div className="card">
-                    <div className="card-body">
+                <div className="card text-white bg-dark">
+                    <div className="card-header">
                         <h1 className="font-weight-bold">App.js</h1>
-                        <p>This is app.js as Class-based component</p>
-                        <h2 className="font-weight-bold">Team: {this.state.team}</h2>
+                    </div>
+                    <div className="card-body">
+                        <h6 className="card-subtitle mb-2 text-muted">This is app.js as Class-based component</h6>
 
-                        <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
+                        <ul className="list-group list-group-flush mb-4">
+                            <li className="list-group-item bg-success">
+                                <h2 className="font-weight-bold">Team: {this.state.team}</h2>
+                            </li>
+                            <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
 
-                        {/* The text My hobbies... will be rendered by Person.js with { props.children } */}
-                        <Person changedName={this.nameChangedHandler} name={this.state.persons[1].name} age={this.state.persons[1].age}>Hobbies: Racing</Person>
+                            {/* The text "Change the next input..." will be rendered by Person.js with { props.children } */}
+                            <Person changedName={this.nameChangedHandler} name={this.state.persons[1].name} age={this.state.persons[1].age}>
+                                <small>Change the next input to see two-way binding</small>
+                            </Person>
 
-                        {/* Passing Method References Between Components (myClick) */}
-                        <Person myClick={this.switchNameHandler.bind(this, 'Maximilian Button')} name={this.state.persons[2].name} age={this.state.persons[2].age}>Click
-                            me to call switchNameHandler()</Person>
+                            {/* Passing Method References Between Components (myClick) */}
+                            <Person myClick={this.switchNameHandler.bind(this, 'Maximilian Bind')} name={this.state.persons[2].name} age={this.state.persons[2].age}>Click me to call switchNameHandler()</Person>
+
+                        </ul>
 
                         <button onClick={ () => this.switchNameHandler('Maximilian Arrow') } type="button" className="btn btn-primary">See full names</button>
+
+                        <div className="mt-4">
+                            <code style={myStyle}>{ JSON.stringify(this.state) }</code>
+                        </div>
                     </div>
                 </div>
             </div>
