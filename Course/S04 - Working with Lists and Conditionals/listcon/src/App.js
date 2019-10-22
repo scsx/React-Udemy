@@ -8,9 +8,9 @@ import Person from './Person/Person';
 class App extends Component {
     state = {
         persons: [
-            {name: 'Max',age: 28},
-            {name: 'Manu',age: 29},
-            {name: 'Stephanie',age: 26}
+            {id: 0, name: 'Max', age: 28},
+            {id: 1, name: 'Manu', age: 29},
+            {id: 2, name: 'Stephanie', age: 26}
         ],
         otherState: 'some other value',
         showPersons: true
@@ -23,13 +23,24 @@ class App extends Component {
         this.setState({persons: currentPersons});
     }
 
-    nameChangedHandler = (event) => {
+    nameChangedHandler = (event, id) => {
+        const personIndex = this.state.persons.findIndex(p => {
+            return p.id === id;
+        });
+        // (a) spread operator has been used in arrays but works also for a single object:
+        const person = {
+            ...this.state.persons[personIndex]
+        };
+        // (b) alternative syntax:
+        // const person = Object.assign({}, this.state.persons[personIndex]);
+
+        // now this is a copy and can be changed:
+        person.name = event.target.value;
+        // more copy, change and write safelly
+        const personsCopy = [...this.state.persons];
+        personsCopy[personIndex] = person;
         this.setState({
-            persons: [
-                {id: '00', name: 'Max', age: 28},
-                {id: '01', name: event.target.value, age: 29},
-                {id: '02', name: 'Stephanie', age: 26}
-            ]
+            persons: personsCopy
         })
     }
 
@@ -47,7 +58,10 @@ class App extends Component {
                 <div className="people">
 
                     {this.state.persons.map((guy, index) => {
-                        return <Person key={guy.id} delClick={() => this.deletePersonHandler(index)} name={guy.name} age={guy.age} />
+                        return <Person key={guy.id} delClick={() => this.deletePersonHandler(index)}
+                        name={guy.name}
+                        age={guy.age}
+                        changed={(event) => this.nameChangedHandler(event, guy.id)} />
                     })}
 
                     {/* <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />

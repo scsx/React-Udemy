@@ -2,3 +2,11 @@
   text-align: center;
   max-width: 600px;
   margin: 40px auto; }
+
+.exercise {
+  max-width: 600px;
+  margin: 40px auto; }
+  .exercise .card {
+    background: #f3f3f3;
+    margin-top: 50px;
+    border: 1px solid #ced4da; }
