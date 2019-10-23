@@ -1,9 +1,8 @@
-import React, {
-    Component
-} from 'react';
-
+import React, { Component } from 'react';
+import Radium, {StyleRoot} from 'radium'; // StyleRoot only for media-queries
 import './App.css';
 import Person from './Person/Person';
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 
 class App extends Component {
     state = {
@@ -53,35 +52,63 @@ class App extends Component {
     render() {
 
         let personsHTML = null;
+        const buttonStyle = {
+            backgroundColor: 'pink',
+            borderColor: 'red',
+            ':hover': {
+                backgroundColor: 'grey'
+            }
+        }
+
+        let dynamicClasses = []; // bootstrap classes
+        if (this.state.persons.length <= 2) {
+            dynamicClasses.push('font-weight-bold ')
+        }
+        if (this.state.persons.length <= 1) {
+            dynamicClasses.push('text-white bg-dark')
+        }
+
         if (this.state.showPersons) {
             personsHTML = (
                 <div className="people">
 
                     {this.state.persons.map((guy, index) => {
-                        return <Person key={guy.id} delClick={() => this.deletePersonHandler(index)}
-                        name={guy.name}
-                        age={guy.age}
-                        changed={(event) => this.nameChangedHandler(event, guy.id)} />
-                    })}
+                        // !! To test ErrorBoundary (now assumes the key)
+                        /*
+                        return <ErrorBoundary key={guy.id}><Person delClick={() => this.deletePersonHandler(index)}
+                            name={guy.name}
+                            age={guy.age}
+                            changed={(event) => this.nameChangedHandler(event, guy.id)} />
+                        </ErrorBoundary>
+                        */
 
-                    {/* <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
-                    <Person name={this.state.persons[1].name} age={this.state.persons[1].age} click={this.switchNameHandler.bind(
-                        this, 'Max!' )} changed={this.nameChangedHandler} />
-                    <Person name={this.state.persons[2].name} age={this.state.persons[2].age} /> */}
+                        return <Person key={guy.id} delClick={() => this.deletePersonHandler(index)}
+                            name={guy.name}
+                            age={guy.age}
+                            changed={(event) => this.nameChangedHandler(event, guy.id)} />
+                    })}
                 </div>
             );
+            // this is just javascript actually:
+            buttonStyle.backgroundColor = 'orange';
+            buttonStyle.borderColor = 'black';
+            buttonStyle[':hover'] = {
+                backgroundColor: 'black'
+            }
         }
 
         return (
-            <div className="App">
-                <h1>App.js</h1>
-                <button className="btn btn-success mt-4" onClick={this.togglePersonsHandler}>Toggle Persons</button>
+            <StyleRoot>{/* radium */}
+                <div className="App">
+                    <h1 className={dynamicClasses.join(' ')}>App.js</h1>
+                    <button style={buttonStyle} className="btn btn-success mt-4" onClick={this.togglePersonsHandler}>Toggle Persons</button>
 
-                {personsHTML}
+                    {personsHTML}
 
-            </div>
+                </div>
+            </StyleRoot>
         );
     }
 }
 
-export default App;
+export default Radium(App);

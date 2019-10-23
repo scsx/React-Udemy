@@ -1,4 +1,4 @@
-create-react-app: https://github.com/facebookincubator/create-react-app
+Create-react-app: https://github.com/facebookincubator/create-react-app
 
 Introducing JSX: https://reactjs.org/docs/introducing-jsx.html
 
