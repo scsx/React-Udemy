@@ -6,13 +6,13 @@ import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
     <div className="container-fluid">
-        <div className="row">
+        <div className="row justify-content-center">
             <div className="col">
-                <App />
+                <App appTitle="People manager" />
             </div>
-            <div className="col">
+            {/* <div className="col">
 
-            </div>
+            </div> */}
         </div>
     </div>,
     document.getElementById('root'));
