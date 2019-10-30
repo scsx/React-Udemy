@@ -1,10 +1,23 @@
 import React, { Component } from "react";
+import Axios from "axios";
 
 class NewPost extends Component {
     state = {
         title: "",
         content: "",
         author: "Max"
+    };
+
+    postDataHandler = () => {
+        const dataToSend = {
+            title: this.state.title,
+            body: this.state.body,
+            author: this.state.author
+        };
+        // 1 URL, 2 Data (axios will stringify it), 3 Optional (config?)
+        Axios.post("/posts", dataToSend).then((response) => {
+            console.log(response);
+        });
     };
 
     render() {
@@ -44,7 +57,9 @@ class NewPost extends Component {
                             <option value="Manu">Manu</option>
                         </select>
                         <div className="text-center">
-                            <button className="btn btn-success mt-3">
+                            <button
+                                className="btn btn-success mt-3"
+                                onClick={this.postDataHandler}>
                                 Add post
                             </button>
                         </div>

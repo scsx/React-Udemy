@@ -15,51 +15,55 @@ class FullPost extends Component {
                 (this.state.loadedPost &&
                     this.state.loadedPost.id !== this.props.id)
             ) {
-                axios
-                    .get(
-                        "https://jsonplaceholder.typicode.com/posts/" +
-                            this.props.id
-                    )
-                    .then((res) => {
-                        console.log(res);
-                        this.setState({ loadedPost: res.data });
-                    });
+                axios.get("/posts/" + this.props.id).then((res) => {
+                    console.log(res);
+                    this.setState({ loadedPost: res.data });
+                });
             }
         }
     }
 
+    deletePostHandler = () => {
+        axios.delete("/posts/" + this.props.id).then((res) => {
+            console.log(res);
+            console.log(
+                "https://jsonplaceholder.typicode.com/posts/1 aceita delete, status: ok"
+            );
+            // this.setState({ loadedPost: res.data });
+        });
+    };
+
     render() {
         // 1 we don't have an ID
-        let post = (
-            <div className="card-body">
-                <p>Please select a Post!</p>
-            </div>
-        );
+        let post = <p className="text-center">Please select a Post!</p>;
         // 2 we have an ID but no state (axios.get() is asynchronous)
         if (this.props.id) {
-            post = (
-                <div className="card-body">
-                    <p>Loading...</p>
-                </div>
-            );
+            post = <p className="text-center">Loading...</p>;
         }
         // 3 we have state updated
         if (this.state.loadedPost) {
             post = (
-                <div className="card-body">
-                    <h2 className="card-title author">
+                <div>
+                    <h4 className="card-title author">
                         {this.state.loadedPost.title}
-                    </h2>
+                        <div className="edit d-inline ml-3">
+                            <button
+                                type="button"
+                                onClick={this.deletePostHandler}
+                                className="btn btn-outline-danger btn-sm">
+                                Delete
+                            </button>
+                        </div>
+                    </h4>
                     <p className="card-text">{this.state.loadedPost.body}</p>
-                    <div className="edit">
-                        <button className="btn btn-danger">Delete</button>
-                    </div>
                 </div>
             );
         }
         post = (
-            <div className="container fullpost text-center">
-                <div className="card">{post}</div>
+            <div className="container fullpost">
+                <div className="card">
+                    <div className="card-body">{post}</div>
+                </div>
             </div>
         );
         return post;

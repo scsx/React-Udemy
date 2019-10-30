@@ -8,11 +8,13 @@ import NewPost from "../../components/NewPost/NewPost";
 class Blog extends Component {
     state = {
         posts: [],
-        selectedPostId: null
+        selectedPostId: null,
+        error: false
     };
     componentDidMount() {
         axios
-            .get("https://jsonplaceholder.typicode.com/posts")
+            //.get("/posts888888888") // test error
+            .get("/posts")
             // axios uses Promises; then() takes a function as arg that will run when the Promise resolves (data arrives)
             .then((response) => {
                 // too many (100) posts, limit to 4 and get a fake author
@@ -35,6 +37,10 @@ class Blog extends Component {
                     };
                 });
                 this.setState({ posts: updatedPosts });
+            })
+            .catch((error) => {
+                console.log(error);
+                this.setState({ error: true });
             });
     }
 
@@ -43,16 +49,24 @@ class Blog extends Component {
     };
 
     render() {
-        const postsJSX = this.state.posts.map((post) => {
-            return (
-                <Post
-                    title={post.title}
-                    author={post.author}
-                    key={post.id}
-                    clicked={() => this.postSelectedHandler(post.id)}
-                />
-            );
-        });
+        let postsJSX = (
+            <p className="text-light bg-danger">
+                There was an error getting posts!
+            </p>
+        );
+        if (!this.state.error) {
+            postsJSX = this.state.posts.map((post) => {
+                return (
+                    <Post
+                        title={post.title}
+                        author={post.author}
+                        key={post.id}
+                        clicked={() => this.postSelectedHandler(post.id)}
+                    />
+                );
+            });
+        }
+
         return (
             <div>
                 <section className="container">
