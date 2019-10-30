@@ -1,26 +1,12 @@
-# Code for this section was added in section 04
-(Folder ErrorBoundary etc)
+# Notes
 
-Error Boundaries:
-https://reactjs.org/docs/error-boundaries.html
-
-Chrome Devtool Debugging:
-https://developers.google.com/web/tools/chrome-devtools/javascript/
+<SideDrawer /> Is not used because Bootstrap doesn't need it
+If problems start implementing it at: https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8125740
 
 ## Useful Resources & Links
 
-More on useEffect():
-https://reactjs.org/docs/hooks-effect.html
+### Section 8
 
-State & Lifecycle:
-https://reactjs.org/docs/state-and-lifecycle.html
+Zip files
 
-PropTypes:
-https://reactjs.org/docs/typechecking-with-proptypes.html
-
-Higher Order Components:
-https://reactjs.org/docs/higher-order-components.html
-
-Refs:
-https://reactjs.org/docs/refs-and-the-dom.html
-
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8145378

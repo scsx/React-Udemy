@@ -1,8 +1,10 @@
 @import "BurgerIngredient.scss";
 
+$darkblue: #111143;
+
 html,
 body {
-    background: #111143;
+    background: $darkblue;
 }
 body {
     margin: 0;
@@ -10,6 +12,11 @@ body {
     font-family: "Open Sans", sans-serif;
 }
 
+.navbar-brand {
+    img {
+        height: 30px;
+    }
+}
 // BURGER
 .burgerbuilder {
     padding: 60px 30px;
@@ -57,5 +64,41 @@ body {
         text-align: center;
         box-shadow: 5px 4px 5px #00000065;
         border-radius: 0 0 6px 6px;
+    }
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    background-color: #0000008a;
+}
+.Modal {
+    position: fixed;
+    z-index: 500;
+    background-color: white;
+    width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 5px 4px 5px #00000065;
+    padding: 16px;
+    left: 15%;
+    top: 30%;
+    box-sizing: border-box;
+    transition: all 0.5s ease-out;
+    @media (min-width: 600px) {
+        width: 500px;
+        left: calc(50% - 250px);
+    }
+    // price
+    p.my-3 {
+        strong {
+            color: $darkblue;
+            font-size: 19px;
+            line-height: 1;
+        }
     }
 }
