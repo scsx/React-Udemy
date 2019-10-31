@@ -1,11 +1,13 @@
 @import "BurgerIngredient.scss";
+@import "Spinner.scss";
 
-$darkblue: #111143;
+$darkblue: #323292;
 
 html,
 body {
     background: $darkblue;
 }
+
 body {
     margin: 0;
     padding: 0;
@@ -17,10 +19,12 @@ body {
         height: 30px;
     }
 }
+
 // BURGER
 .burgerbuilder {
     padding: 60px 30px;
     background: #e3dea2;
+
     .burger {
         position: relative;
         width: 100%;
@@ -28,6 +32,7 @@ body {
         margin: auto;
         min-height: 350px;
         text-align: center;
+
         p {
             font-weight: 700;
             font-size: 33px;
@@ -42,20 +47,24 @@ body {
         margin: -40px auto auto auto;
         border: none;
         box-shadow: 5px 4px 5px #00000065;
+
         li {
             width: 20%;
             margin-right: 0;
+
             &.price {
                 font-size: 40px;
                 font-weight: 700;
                 text-align: center;
                 padding: 17px 5px 12px 5px;
             }
+
             h5 {
                 font-weight: 700;
             }
         }
     }
+
     .order {
         width: 40%;
         background: #efedec;
@@ -76,6 +85,7 @@ body {
     z-index: 100;
     background-color: #0000008a;
 }
+
 .Modal {
     position: fixed;
     z-index: 500;
@@ -89,10 +99,12 @@ body {
     top: 30%;
     box-sizing: border-box;
     transition: all 0.5s ease-out;
+
     @media (min-width: 600px) {
         width: 500px;
         left: calc(50% - 250px);
     }
+
     // price
     p.my-3 {
         strong {

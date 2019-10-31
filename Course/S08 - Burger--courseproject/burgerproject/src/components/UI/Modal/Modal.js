@@ -5,7 +5,10 @@ import Backdrop from "../Backdrop/Backdrop";
 class Modal extends Component {
     // added for performance:
     shouldComponentUpdate(nextProps, nextState) {
-        return nextProps.showModal !== this.props.showModal;
+        return (
+            nextProps.showModal !== this.props.showModal ||
+            nextProps.children !== this.props.children
+        );
     }
 
     render() {
