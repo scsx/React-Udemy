@@ -1,5 +1,5 @@
-html,
-body {
+body,
+html {
   background: #216d8c; }
 
 body {
@@ -37,14 +37,20 @@ p.bg-danger {
     color: darkslategrey; }
 
 .newpost {
-  padding: 20px 15px; }
+  padding: 20px;
+  background: #fff; }
+  .newpost label {
+    font-weight: 700;
+    margin-top: 15px; }
+  .newpost .btn {
+    margin-top: 15px; }
 
 header {
   margin-bottom: 30px; }
   header nav ul {
     list-style: none;
     padding: 0;
-    margin: 10px 0 0 0; }
+    margin: 10px 0 0; }
     header nav ul li {
       display: inline-block;
       padding: 20px;
@@ -55,3 +61,25 @@ header {
         color: #fff; }
         header nav ul li a:hover {
           color: #90d5f7; }
+        header nav ul li a.active {
+          color: orange; }
+
+footer {
+  margin-bottom: 30px; }
+  footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0; }
+    footer ul li {
+      display: inline-block;
+      padding: 8px 20px;
+      background: #2c7d9e;
+      margin-right: 4px; }
+      footer ul li a {
+        border: none !important;
+        color: #fff;
+        font-size: 13px; }
+        footer ul li a:hover {
+          color: #90d5f7; }
+        footer ul li a.active {
+          color: orange; }

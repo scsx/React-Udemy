@@ -9,6 +9,7 @@ class Posts extends Component {
     }
 
     componentDidMount() {
+        console.log(this.props);
         myAxiosInstance
             .get('/posts')
             .then(response => {

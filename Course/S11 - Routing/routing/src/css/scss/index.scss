@@ -1,5 +1,5 @@
-html,
-body {
+body,
+html {
     background: #216d8c;
 }
 
@@ -24,7 +24,6 @@ p.bg-danger {
         display: block;
         margin-bottom: 8px;
         cursor: pointer;
-
         &:hover {
             background: #37ffbc;
         }
@@ -52,7 +51,17 @@ p.bg-danger {
 }
 
 .newpost {
-    padding: 20px 15px;
+    padding: 20px;
+    background: #fff;
+
+    label {
+        font-weight: 700;
+        margin-top: 15px;
+    }
+
+    .btn {
+        margin-top: 15px;
+    }
 }
 
 header {
@@ -62,7 +71,7 @@ header {
         ul {
             list-style: none;
             padding: 0;
-            margin: 10px 0 0 0;
+            margin: 10px 0 0;
 
             li {
                 display: inline-block;
@@ -75,6 +84,36 @@ header {
                     &:hover {
                         color: #90d5f7;
                     }
+                    &.active {
+                        color: orange;
+                    }
+                }
+            }
+        }
+    }
+}
+footer {
+    margin-bottom: 30px;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 10px 0 0;
+
+        li {
+            display: inline-block;
+            padding: 8px 20px;
+            background: #2c7d9e;
+            margin-right: 4px;
+            a {
+                border: none !important;
+                color: #fff;
+                font-size: 13px;
+                &:hover {
+                    color: #90d5f7;
+                }
+                &.active {
+                    color: orange;
                 }
             }
         }

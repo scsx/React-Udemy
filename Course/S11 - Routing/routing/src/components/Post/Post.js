@@ -1,4 +1,5 @@
 import React from 'react';
+// import { withRouter } from 'react-router-dom';
 
 const post = (props) => (
     <li className="card post" onClick={props.clicked}>
@@ -12,3 +13,6 @@ const post = (props) => (
 );
 
 export default post;
+// use this to get the info from the nearest Route (history, match, etc):
+// Example: https://www.notion.so/scsx/Routing-6953c6de7b6143d3a795464f6d6a7b50#cebcfeab2a034b33a1ac7090c24674ce
+// export default withRouter(post);
