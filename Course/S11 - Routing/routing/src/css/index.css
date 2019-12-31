@@ -7,10 +7,10 @@ body {
   padding: 0;
   font-family: "Open Sans", sans-serif; }
 
-p.bg-danger {
+p.bg-info {
   padding: 15px;
   border-radius: 6px;
-  border: 4px solid #bf202f;
+  border: 4px solid #175d79;
   margin: 0; }
 
 .posts {
@@ -21,14 +21,21 @@ p.bg-danger {
     margin-bottom: 8px;
     cursor: pointer; }
     .posts li:hover {
-      background: #37ffbc; }
-    .posts li h5.author {
+      background: #054f6d; }
+    .posts li h5.card-title {
       text-transform: capitalize;
       font-weight: 700;
       color: #f0931a; }
+    .posts li p.author {
+      color: grey;
+      margin: 0; }
 
 .fullpost {
   text-align: left; }
+  .fullpost h1 {
+    font-weight: 700;
+    text-transform: capitalize;
+    color: orange; }
   .fullpost .author {
     text-transform: capitalize; }
   .fullpost p.text-center {

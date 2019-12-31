@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Route, Link, NavLink} from 'react-router-dom';
+import { Route, Link, NavLink, Switch } from 'react-router-dom';
 
 import Posts from './Posts/Posts';
 import NewPost from './NewPost/NewPost';
@@ -14,14 +14,14 @@ class Blog extends Component {
                     <nav>
                         <ul>
                             <li>
-                                <Link to="/" title="Go home">Home</Link>
+                                <Link to="/posts" title="Go to posts">Posts</Link>
                             </li>
                             <li>
                                 <Link
                                     to={{
                                     pathname: '/new-post',
-                                    hash: '#submit',
-                                    search: '?quick-submit=true'
+                                    hash: '#example-hash',
+                                    search: '?submit=yes-please'
                                 }}
                                     title="Create new post">New post</Link>
                             </li>
@@ -31,21 +31,18 @@ class Blog extends Component {
 
                 {/*<Route path="/" exact render={ () => <h1>Hey HTML</h1> } />*/}
 
-                <Route path="/" exact component={Posts}/>
-                <Route path="/new-post" component={NewPost}/> {/*
-                <section className="fullposts">
-                    <FullPost id={this.state.selectedPostId}/>
-                </section>
-                <section className="posts">
-                    <NewPost/>
-                </section>
-                */}
+                <Switch>
+                    <Route path="/new-post" component={NewPost}/>
+                    <Route path="/posts" component={Posts}/>
+                    {/* Order matters because "new-post" could be interpreted as :id */}
+                    {/* #moved to a nested route# <Route path="/:id" exact component={FullPost}/> */}
+                </Switch>
 
                 {/* Using NavLink: */}
                 <footer>
                     <ul>
                         <li>
-                            <NavLink exact activeClassName="active" to="/">Home</NavLink>
+                            <NavLink exact activeClassName="active" to="/posts">Posts</NavLink>
                         </li>
                         <li>
                             <NavLink activeClassName="active" to="/new-post">New post</NavLink>

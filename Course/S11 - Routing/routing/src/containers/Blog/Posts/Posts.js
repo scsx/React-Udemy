@@ -1,6 +1,8 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import myAxiosInstance from "../../../axios";
 import Post from "../../../components/Post/Post";
+import FullPost from "../FullPost/FullPost";
+import { Link, Route } from 'react-router-dom';
 
 class Posts extends Component {
 
@@ -9,7 +11,6 @@ class Posts extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props);
         myAxiosInstance
             .get('/posts')
             .then(response => {
@@ -22,7 +23,7 @@ class Posts extends Component {
                         author: 'Max'
                     }
                 });
-                this.setState({ posts: updatedPosts });
+                this.setState({posts: updatedPosts});
             })
             .catch(error => {
                 this.setState({error: true});
@@ -30,7 +31,8 @@ class Posts extends Component {
     }
 
     postSelectedHandler = (id) => {
-        this.setState({selectedPostId: id});
+        // this.props.history.push({ pathname: '/posts/' + id });
+        this.props.history.push('/posts/' + id); // just string
     }
 
     render() {
@@ -41,18 +43,34 @@ class Posts extends Component {
                 .state
                 .posts
                 .map(post => {
-                    return <Post
-                        key={post.id}
-                        title={post.title}
-                        author={post.author}
-                        clicked={() => this.postSelectedHandler(post.id)}/>;
+                    return (
+                        // navigating by link
+                        /*
+                        <Link to={'/' + post.id} key={post.id}>
+                            <Post
+                                title={post.title}
+                                author={post.author}
+                                clicked={() => this.postSelectedHandler(post.id)}/>
+                        </Link>
+                        */
+                        // navigating programmatically, using postSelectedHandler
+                        <Post   
+                            key={post.id}
+                            title={post.title}
+                            author={post.author}
+                            clicked={() => this.postSelectedHandler(post.id)}/>
+                    );
                 });
         }
 
         return (
-            <ul className="posts">
-                {posts}
-            </ul>
+            <div>
+                <ul className="posts">
+                    {posts}
+                </ul>
+                <Route path={this.props.match.url + '/:id'} exact component={FullPost}/>
+            </div>
+            
         );
     }
 }
