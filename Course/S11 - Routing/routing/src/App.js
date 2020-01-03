@@ -7,6 +7,7 @@ class App extends Component {
     render() {
         return (
             <BrowserRouter>
+            {/* <BrowserRouter basename="/my-app"> --> For server config */}
                 <div className="app">
                     <div className="container">
                         <Blog/>
