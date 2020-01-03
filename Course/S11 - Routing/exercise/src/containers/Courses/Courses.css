@@ -1,9 +1,5 @@
 .Courses {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-    margin: auto;
+    margin: 30px 0;
 }
 
 .Course {
