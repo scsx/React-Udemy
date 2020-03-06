@@ -3,8 +3,8 @@
 
 $darkblue: #323292;
 
-html,
-body {
+body,
+html {
     background: $darkblue;
 }
 
@@ -44,7 +44,7 @@ body {
 .allcontrols {
     .controls.list-group-horizontal.list-group {
         width: 90%;
-        margin: -40px auto auto auto;
+        margin: -40px auto auto;
         border: none;
         box-shadow: 5px 4px 5px #00000065;
 
@@ -56,7 +56,7 @@ body {
                 font-size: 40px;
                 font-weight: 700;
                 text-align: center;
-                padding: 17px 5px 12px 5px;
+                padding: 17px 5px 12px;
             }
 
             h5 {
@@ -99,7 +99,6 @@ body {
     top: 30%;
     box-sizing: border-box;
     transition: all 0.5s ease-out;
-
     @media (min-width: 600px) {
         width: 500px;
         left: calc(50% - 250px);
@@ -113,4 +112,29 @@ body {
             line-height: 1;
         }
     }
+}
+
+// CHECKOUT
+.checkoutSummary {
+    padding: 30px;
+    background: #fff;
+
+    h1 {
+        text-align: center;
+        font-weight: 700;
+        font-size: 33px;
+        color: #89865f;
+        margin-bottom: 20px;
+    }
+
+    .btnbox {
+        margin-top: 50px;
+        text-align: center;
+    }
+}
+
+// CONTACT DATA FORM
+.ctctForm {
+    padding: 30px;
+    background: #fff;
 }

@@ -2,7 +2,7 @@ import React from "react";
 import burgerLogo from "../../assets/images/burger-logo.png";
 
 const logo = (props) => (
-    <a className="navbar-brand" href="xxx">
+    <a className="navbar-brand" href="/">
         <img src={burgerLogo} alt="My burger" />
     </a>
 );

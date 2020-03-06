@@ -137,8 +137,8 @@
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
 
-html,
-body {
+body,
+html {
   background: #323292; }
 
 body {
@@ -166,7 +166,7 @@ body {
 
 .allcontrols .controls.list-group-horizontal.list-group {
   width: 90%;
-  margin: -40px auto auto auto;
+  margin: -40px auto auto;
   border: none;
   box-shadow: 5px 4px 5px #00000065; }
   .allcontrols .controls.list-group-horizontal.list-group li {
@@ -176,7 +176,7 @@ body {
       font-size: 40px;
       font-weight: 700;
       text-align: center;
-      padding: 17px 5px 12px 5px; }
+      padding: 17px 5px 12px; }
     .allcontrols .controls.list-group-horizontal.list-group li h5 {
       font-weight: 700; }
 
@@ -219,3 +219,20 @@ body {
     color: #323292;
     font-size: 19px;
     line-height: 1; }
+
+.checkoutSummary {
+  padding: 30px;
+  background: #fff; }
+  .checkoutSummary h1 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 33px;
+    color: #89865f;
+    margin-bottom: 20px; }
+  .checkoutSummary .btnbox {
+    margin-top: 50px;
+    text-align: center; }
+
+.ctctForm {
+  padding: 30px;
+  background: #fff; }
