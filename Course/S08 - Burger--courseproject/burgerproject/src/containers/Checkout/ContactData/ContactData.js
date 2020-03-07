@@ -16,11 +16,11 @@ class ContactData extends Component {
             <div className="ctctForm">
                 <h4>Enter your contact data</h4>
                 <form>
-                    <input type="text" name="name" placeholder="Your name" />
-                    <input type="email" name="email" placeholder="Your email" />
-                    <input type="text" name="street" placeholder="Your street" />
-                    <input type="text" name="postal" placeholder="Postal code" />
-                        <Button btnType="btn-success">Order</Button>
+                    <input className="form-control mb-2" type="text" name="name" placeholder="Your name" />
+                    <input className="form-control mb-2" type="email" name="email" placeholder="Your email" />
+                    <input className="form-control mb-2" type="text" name="street" placeholder="Your street" />
+                    <input className="form-control mb-2" type="text" name="postal" placeholder="Postal code" />
+                    <Button btnType="btn-success">Finish Order</Button>
                 </form>
             </div>
         );

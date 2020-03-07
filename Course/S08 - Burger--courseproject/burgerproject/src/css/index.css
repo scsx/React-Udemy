@@ -235,4 +235,9 @@ body {
 
 .ctctForm {
   padding: 30px;
-  background: #fff; }
+  background: #f5eedd;
+  border: 1px solid #e3cec0; }
+  .ctctForm h4 {
+    font-weight: 700;
+    color: #89865f;
+    margin: 0 0 20px 0; }
