@@ -94,40 +94,14 @@ class BurgerBuilder extends Component {
         this.setState({ purchasing: false });
     };
     purchaseContinueHandler = () => {
-        /*
-        this.setState({ loading: true });
-        const orderObj = {
-            ingredients: this.state.ingredients,
-            // in a real app we'd set the price in the server; values should be there and also the client couldn't manipulate it
-            price: this.state.totalPrice,
-            deliveryMethod: "fastest",
-            customer: {
-                name: "Brooklyn Kelly",
-                address: {
-                    street: "3451 Groveland Terrace",
-                    zipCode: "Minneapolis, MN 55403",
-                    country: "EUA"
-                },
-                email: "brooklyn.kelly@example.com"
-            }
-        };
-        // /orders doesnt exist yet in Firebase; there a orders node will be created
-        // ending in .json is also Firebase specific
-        axios
-            .post("/orders.json", orderObj)
-            .then((response) => {
-                console.log(response);
-                this.setState({ loading: false, purchasing: false });
-            })
-            .catch((error) => {
-                console.log(error);
-                this.setState({ loading: false, purchasing: false });
-            });
-            */
         const queryParams = [];
         for (let i in this.state.ingredients) {
             queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]));
         }
+        
+        // pass totalprice to checkout
+        queryParams.push('price=' + this.state.totalPrice);
+
         const queryString = queryParams.join('&');
         this.props.history.push({
             pathname: '/checkout',
