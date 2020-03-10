@@ -14,9 +14,16 @@ body {
     font-family: "Open Sans", sans-serif;
 }
 
-.navbar-brand {
-    img {
-        height: 30px;
+.mainheader {
+    .navbar-brand {
+        img {
+            height: 30px;
+        }
+    }
+    #navbarNav {
+        .nav-link.active {
+            background-color: orange;
+        }
     }
 }
 
@@ -142,6 +149,6 @@ body {
     h4 {
         font-weight: 700;
         color: #89865f;
-        margin: 0 0 20px 0;
+        margin: 0 0 20px;
     }
 }
