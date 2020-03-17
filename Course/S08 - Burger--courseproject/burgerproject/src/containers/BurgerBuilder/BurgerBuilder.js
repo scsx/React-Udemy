@@ -5,7 +5,7 @@ import BuildControls from "../../components/Burger/BuildControls/BuildControls";
 import Modal from "../../components/UI/Modal/Modal";
 import OrderSummary from "../../components/Burger/OrderSummary/OrderSummary";
 import Spinner from "../../components/UI/Spinner/Spinner";
-import axios from "../../axios-orders";
+import axios from "../../axios-orders"; // check if needed
 import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler"; // lowercase w because we wont use it in JSX:
 import axiosInstance from "../../axios-orders";
 

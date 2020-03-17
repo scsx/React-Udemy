@@ -10,7 +10,7 @@ const withErrorHandler = (WrappedComponent, axios) => {
             error: null
         };
 
-        // wasdid mount; see https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/13556520
+        // was did mount; see https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/13556520
         componentWillMount() {
             // CLEAR ERROR IF NEW ONE COMES IN
             this.reqInterceptor = axios.interceptors.request.use((req) => {
