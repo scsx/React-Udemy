@@ -146,6 +146,10 @@ body {
   padding: 0;
   font-family: "Open Sans", sans-serif; }
 
+p.noIngredients {
+  text-align: center;
+  font-weight: 700; }
+
 .mainheader .navbar-brand img {
   height: 30px; }
 

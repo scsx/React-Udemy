@@ -3,34 +3,43 @@ import React from "react";
 const input = (props) => {
 
     let inputElement = null;
+    const inputClasses = ["form-control"];
+
+    if (props.invalid && props.shouldValidate && props.touched) {
+        inputClasses.push('is-invalid');
+    }
 
     switch (props.elementType) {
         case ('input'):
             inputElement = <input
-                className="form-control"
+                className={inputClasses.join(' ')}
                 {...props.elementConfig}
-                defaultValue={props.value} />;
+                defaultValue={props.value}
+                onChange={props.changed} />;
             break;
         case ('email'):
             inputElement = <input
-                className="form-control"
+                className={inputClasses.join(' ')}
                 {...props.elementConfig}
-                defaultValue={props.value} />;
+                defaultValue={props.value}
+                onChange={props.changed} />;
             break;
         case ('textarea'):
             inputElement = (
                 <textarea
-                    className="form-control"
+                    className={inputClasses.join(' ')}
                     {...props.elementConfig}
-                    defaultValue={props.value}>
+                    defaultValue={props.value}
+                    onChange={props.changed}>
                 </textarea>
             );
             break;
         case ('select'):
             inputElement = (
                 <select
-                    className="form-control"
-                    defaultValue={props.value}>
+                    className={inputClasses.join(' ')}
+                    defaultValue={props.value}
+                    onChange={props.changed}>
                         {
                         props.elementConfig.options.map(option => (
                             <option key={option.value} defaultValue={option.value}>{option.displayValue}</option>
@@ -43,7 +52,8 @@ const input = (props) => {
             inputElement = <input
                 {...props.elementConfig}
                 className="noTypeFound"
-                defaultValue={props.value} />;
+                defaultValue={props.value}
+                onChange={props.changed} />;
     }
 
     return (
