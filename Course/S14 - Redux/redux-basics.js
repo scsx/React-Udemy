@@ -23,9 +23,11 @@ const myReducer = (state = myInitialState, action) => {
 // STORE
 const myStore = myCreateStore(myReducer);
 
+// SUBSCRIPTION
+myStore.subscribe(() => {
+    console.log( 'Sub: ' + myStore.getState());
+});
+
 // DISPATCHING ACTIONS
 myStore.dispatch({type: 'INC_COUNTER'});
 myStore.dispatch({type: 'ADD_COUNTER', myValue: 10});
-console.log(myStore.getState());
-
-// SUBSCRIPTION

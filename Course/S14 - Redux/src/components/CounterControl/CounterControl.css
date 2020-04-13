@@ -13,5 +13,7 @@
 
 .CounterControl:hover,
 .CounterControl:active {
-    background-color: #eee;
+    background-color: #222;
+    color: #fff;
+    user-select: none;
 }
