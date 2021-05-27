@@ -1,5 +1,5 @@
 # React-Udemy
 React - The Complete Guide (incl Hooks, React Router, Redux)
+(https://www.udemy.com/course/react-the-complete-guide-incl-redux)
 
-## Notes from the course
-Apparently correct/complete: https://interglobalmedia.gitbooks.io/react-notes/chapter1.html
+## Notes
