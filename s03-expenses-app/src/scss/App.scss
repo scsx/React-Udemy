@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+
+@import "vars";
+
+body {
+    background: linear-gradient($purple1, $purple2);
+    min-height: 100vh;
+    color: white;
+    font-family: "Roboto", sans-serif;
+}
+
+.App-logo {
+    width: 50px;
+}
