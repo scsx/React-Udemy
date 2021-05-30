@@ -1,3 +1,15 @@
 // COLORS
-$purple1: rgb(56, 25, 128);
-$purple2: rgb(12, 4, 30);
+$lightgrey: #dbdbdb;
+$yellow: #ffe425;
+
+.black {
+    color: black !important;
+}
+
+.bg-white {
+    background-color: white !important;
+}
+
+.bg-yellow {
+    background-color: $yellow !important;
+}
