@@ -40,7 +40,6 @@ const NewExpense = (props) => {
     const submitHandler = (event) => {
         event.preventDefault()
         props.onSavedExpenseData(userInput)
-
         setUserInput({
             enteredTitle: '',
             enteredAmount: '',
@@ -82,9 +81,14 @@ const NewExpense = (props) => {
                             />
                         </div>
                     </div>
-                    <Button className='bg-yellow' type='submit'>
-                        Add Expense
-                    </Button>
+                    <div className='alright'>
+                        <Button
+                            className='bg-yellow'
+                            type='submit'
+                            size='large'>
+                            Add Expense
+                        </Button>
+                    </div>
                 </form>
             </CardContent>
         </Card>
