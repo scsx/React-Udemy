@@ -1,0 +1,30 @@
+.form-control {
+    margin: 0.5rem 0;
+}
+
+.form-control label {
+    font-weight: bold;
+    background: linear-gradient(to right, #7927b2, #fb3182);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-control input {
+    display: block;
+    width: 60%;
+    margin: 1.5rem auto 1rem auto;
+    border: 2px solid #ccc;
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    padding: .5rem .75rem;
+    text-align: center;
+}
+
+.form-control input:focus {
+    outline: none;
+    background: #fad0ec;
+    border-color: #8b005d;
+}
