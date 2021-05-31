@@ -80,7 +80,7 @@ const App = () => {
                         <Expenses items={expenses} />
                     </Grid>
                     <Grid item xs={4}>
-                        <NewExpense DELETEAFTER={expenses} onAddExpenseData={addExpenseHandler} />
+                        <NewExpense onAddExpenseData={addExpenseHandler} />
                     </Grid>
                 </Grid>
             </Container>

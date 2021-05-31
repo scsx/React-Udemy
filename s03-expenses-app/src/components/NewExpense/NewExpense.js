@@ -5,22 +5,36 @@ import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 
 const NewExpense = (props) => {
-    console.log(props.DELETEAFTER)
-    const [userInput, setUserInput] = useState({
-        title: '',
-        amount: '',
-        date: '',
-        id: Math.random().toString(36).substring(7)
-    })
+    const [enteredTitle, setEnteredTitle] = useState('')
+    const [enteredAmount, setEnteredAmount] = useState('')
+    const [enteredDate, setEnteredDate] = useState('')
     const [isEditing, setIsEditing] = useState(false)
 
     const titleChangeHandler = (event) => {
-        setUserInput((prevState) => {
-            return {
-                ...prevState,
-                title: event.target.value
-            }
-        })
+        setEnteredTitle(event.target.value)
+    }
+
+    const amountChangeHandler = (event) => {
+        setEnteredAmount(event.target.value)
+    }
+
+    const dateChangeHandler = (event) => {
+        setEnteredDate(event.target.value)
+    }
+
+    const submitHandler = (event) => {
+        event.preventDefault()
+        const expenseData = {
+            title: enteredTitle,
+            amount: enteredAmount,
+            date: new Date(enteredDate),
+            id: Math.random().toString(36).substring(7)
+        }
+        props.onAddExpenseData(expenseData)
+        setEnteredTitle('')
+        setEnteredAmount('')
+        setEnteredDate('')
+        setIsEditing(false)
     }
 
     const startIsEditing = () => {
@@ -28,55 +42,6 @@ const NewExpense = (props) => {
     }
 
     const stopIsEditing = () => {
-        setIsEditing(false)
-    }
-
-    const amountChangeHandler = (event) => {
-        setUserInput((prevState) => {
-            return {
-                ...prevState,
-                amount: event.target.value
-            }
-        })
-    }
-
-    const formatDate = (date) => {
-        var d = new Date(date),
-            month = '' + (d.getMonth() + 1),
-            day = '' + d.getDate(),
-            year = d.getFullYear()
-
-        if (month.length < 2) month = '0' + month
-        if (day.length < 2) day = '0' + day
-
-        return [year, month, day].join('-')
-    }
-
-    const dateChangeHandler = (event) => {
-        console.log("original: " + new Date(event.target.value))
-        
-        // const formattedDate = formatDate(event.target.value)
-        let formattedDate = new Date(event.target.value).toLocaleDateString('en-US')
-        formattedDate = formatDate(formattedDate)
-        console.log("fornatted: " + formattedDate)
-        setUserInput((prevState) => {
-            return {
-                ...prevState,
-                date: formattedDate
-            }
-        })
-        
-    }
-
-    const submitHandler = (event) => {
-        event.preventDefault()
-        props.onAddExpenseData(userInput)
-        setUserInput({
-            title: '',
-            amount: '',
-            date: '',
-            id: ''
-        })
         setIsEditing(false)
     }
 
@@ -98,7 +63,7 @@ const NewExpense = (props) => {
                                 <label>Title</label>
                                 <input
                                     type='text'
-                                    value={userInput.title}
+                                    value={enteredTitle}
                                     onChange={titleChangeHandler}
                                 />
                             </div>
@@ -106,7 +71,7 @@ const NewExpense = (props) => {
                                 <label>Amount</label>
                                 <input
                                     type='number'
-                                    value={userInput.amount}
+                                    value={enteredAmount}
                                     onChange={amountChangeHandler}
                                     min='0.0'
                                     step='1'
@@ -116,7 +81,7 @@ const NewExpense = (props) => {
                                 <label>Date</label>
                                 <input
                                     type='date'
-                                    value={userInput.date}
+                                    value={enteredDate}
                                     onChange={dateChangeHandler}
                                     min='2019-01-01'
                                     max='2022-12-31'
