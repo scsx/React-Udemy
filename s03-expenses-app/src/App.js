@@ -24,7 +24,7 @@ const App = () => {
         {
             id: 'e2',
             title: 'New TV',
-            amount: 799.49,
+            amount: 399.49,
             date: new Date(2021, 2, 12)
         },
         {
@@ -36,24 +36,29 @@ const App = () => {
         {
             id: 'e4',
             title: 'New Desk (Wooden)',
-            amount: 450,
+            amount: 150,
             date: new Date(2021, 5, 12)
+        },
+        {
+            id: 'e5',
+            title: 'Sonos Speaker',
+            amount: 299,
+            date: new Date(2021, 8, 17)
+        },
+        {
+            id: 'e6',
+            title: 'Food outside',
+            amount: 45,
+            date: new Date(2021, 0, 17)
         }
     ]
 
     const [expenses, setExpenses] = useState(DUMMY_EXPENSES)
 
     const addExpenseHandler = (enteredExpenseData) => {
-    console.log(enteredExpenseData)
         setExpenses((prevExpenses) => {
             return [enteredExpenseData, ...prevExpenses]
         })
-        /*
-        const expenseData = {
-            ...enteredExpenseData,
-            id: Math.random().toString()
-        }
-        */
     }
 
     return (
@@ -75,7 +80,7 @@ const App = () => {
                         <Expenses items={expenses} />
                     </Grid>
                     <Grid item xs={4}>
-                        <NewExpense onAddExpenseData={addExpenseHandler} />
+                        <NewExpense DELETEAFTER={expenses} onAddExpenseData={addExpenseHandler} />
                     </Grid>
                 </Grid>
             </Container>

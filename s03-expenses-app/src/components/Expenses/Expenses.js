@@ -1,6 +1,10 @@
 import { useState } from 'react'
-import ExpenseItem from './ExpenseItem'
+import Grid from '@material-ui/core/Grid'
+import Card from '@material-ui/core/Card'
+import CardContent from '@material-ui/core/CardContent'
 import ExpenseFilter from './ExpenseFilter'
+import ExpensesList from './ExpensesList'
+import ExpensesChart from '../Expenses/ExpensesChart'
 import MaxCard from '../UI/MaxCard'
 
 const Expenses = (props) => {
@@ -10,21 +14,30 @@ const Expenses = (props) => {
         setFilteredYear(chosenYear)
     }
 
+    const filteredExpenses = props.items.filter((expense) => {
+        console.log(expense)
+        return expense.date.getFullYear().toString() === filteredYear
+    })
+
     return (
         <MaxCard className='expenses'>
-            <ExpenseFilter
-                selectedYear={filteredYear}
-                onChangeFilter={filterChangeHandler}
-            />
-            {props.items.map((expense) => {
-                return (
-                    <ExpenseItem
-                        key={expense.id}
-                        date={expense.date}
-                        title={expense.title}
-                        amount={expense.amount} />
-                )
-            })}
+            <Card className='expfilter'>
+                <CardContent>
+                    <Grid container spacing={3}>
+                        <Grid item xs={4}>
+                            <ExpenseFilter
+                                selectedYear={filteredYear}
+                                onChangeFilter={filterChangeHandler}
+                            />
+                        </Grid>
+                        <Grid item xs={8}>
+                            <ExpensesChart expenses={filteredExpenses} />
+                        </Grid>
+                    </Grid>
+                </CardContent>
+            </Card>
+
+            <ExpensesList items={filteredExpenses} />
         </MaxCard>
     )
 }

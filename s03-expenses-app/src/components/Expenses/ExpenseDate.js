@@ -1,7 +1,4 @@
-import Chip from "@material-ui/core/Chip"
-
 const ExpenseDate = (propsOrAnyName) => {
-    console.log(propsOrAnyName)
     const month = propsOrAnyName.date.toLocaleString("en-US", {
         month: "long",
     })
@@ -10,7 +7,13 @@ const ExpenseDate = (propsOrAnyName) => {
     })
     const year = propsOrAnyName.date.getFullYear()
 
-    return <Chip label={day + "/" + month + "/" + year} variant='outlined' />
+    return (
+        <div className="date">
+            <h4>{day}</h4>
+            <h5>{month}</h5>
+            <p>{year}</p>
+        </div>
+    )
 }
 
 export default ExpenseDate

@@ -5,7 +5,7 @@ import MaxCard from '../UI/MaxCard'
 
 const ExpenseItem = (props) => {
     return (
-        <MaxCard className='expense-item'>
+        <MaxCard className='expense-item' id={props.idKey}>
             <Card>
                 <CardContent>
                     <table>

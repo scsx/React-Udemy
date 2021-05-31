@@ -1,5 +1,6 @@
 // COLORS
 $lightgrey: #dbdbdb;
+$grey: #757e8e;
 $yellow: #ffe425;
 
 .black {
@@ -14,6 +15,18 @@ $yellow: #ffe425;
     background-color: $yellow !important;
 }
 
+.bg-grey {
+    background-color: $grey !important;
+}
+
+.text-white {
+    color: white !important;
+}
+
 .alright {
     text-align: right;
+}
+
+.alcenter {
+    text-align: center;
 }

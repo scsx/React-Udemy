@@ -49,6 +49,11 @@ body {
 }
 
 // COMPONENTS
+.expenses {
+    .empty {
+        font-size: 1rem;
+    }
+}
 .expense-item {
     margin-bottom: 1.5rem;
     .MuiCardContent-root:last-child {
@@ -61,6 +66,22 @@ body {
         vertical-align: top;
         table-layout: fixed;
         h3 {
+            margin: 0;
+        }
+    }
+
+    .date {
+        text-align: center;
+        width: 54px;
+        h4 {
+            margin: 0;
+            font-size: 2rem;
+            color: $grey;
+        }
+        h5 {
+            margin: -5px 0 0 0;
+        }
+        p {
             margin: 0;
         }
     }
@@ -105,5 +126,45 @@ body {
 
     .form-select {
         margin-top: 1rem;
+    }
+}
+
+.chart {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    height: 5rem;
+
+    .chart-bar {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: calc(100% / 12);
+    }
+
+    .chart-bar__inner {
+        height: 100%;
+        width: 100%;
+        border: 1px solid white;
+        //border-radius: 4px;
+        background-color: $yellow;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .chart-bar__fill {
+        background-color: darken($yellow, 20%);
+        width: 100%;
+        transition: all 0.3s ease-out;
+    }
+
+    .chart-bar__label {
+        text-transform: uppercase;
+        font-size: .75rem;
+        text-align: center;
+        margin-top: .5rem;
     }
 }
