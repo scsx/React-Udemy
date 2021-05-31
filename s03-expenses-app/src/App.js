@@ -32,7 +32,11 @@ const App = () => {
                     <Typography variant='h1' className='black'>
                         EXPENSE TRACKER
                     </Typography>
-                    <a href='https://github.com/academind/react-complete-guide-code/tree/05-rendering-lists-conditional-content'>
+                    <a
+                        target='_blank'
+                        rel='noreferrer'
+                        className='text-grey'
+                        href='https://github.com/academind/react-complete-guide-code/tree/05-rendering-lists-conditional-content'>
                         REPO
                     </a>
                 </Toolbar>
