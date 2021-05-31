@@ -8,7 +8,7 @@ import ExpensesChart from '../Expenses/ExpensesChart'
 import MaxCard from '../UI/MaxCard'
 
 const Expenses = (props) => {
-    const [filteredYear, setFilteredYear] = useState('2020')
+    const [filteredYear, setFilteredYear] = useState('2021')
 
     const filterChangeHandler = (chosenYear) => {
         setFilteredYear(chosenYear)

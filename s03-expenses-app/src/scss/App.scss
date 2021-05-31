@@ -52,36 +52,58 @@ body {
 .expenses {
     .empty {
         font-size: 1rem;
+        margin-top: 1rem;
     }
 }
 .expense-item {
-    margin-bottom: 1.5rem;
+    margin-bottom: .5rem;
+
+    .MuiCardContent-root,
     .MuiCardContent-root:last-child {
-        padding-bottom: 1rem;
+        padding: .5rem;
+    }
+
+    &:hover .MuiPaper-root {
+        background-color: $yellow;
     }
 
     table {
         width: 100%;
         color: #212529;
         vertical-align: top;
-        table-layout: fixed;
+        td.date {
+            width: 80px;
+        }
+        td.alright {
+            font-size: 1.25rem;
+            background-color: lighten($lightgrey, 10%);
+            border-bottom: 4px solid $lightgrey;
+            padding-right: 1rem;
+            content: '$';
+        }
         h3 {
-            margin: 0;
+            margin: 0 0 0 1rem;
+            font-size: 1.25rem;
+            color: darken($grey, 20%);
         }
     }
 
     .date {
         text-align: center;
-        width: 54px;
+        border-radius: 2px;
+        padding: .2rem;
+        background-color: $lightgrey;
         h4 {
             margin: 0;
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: $grey;
         }
         h5 {
-            margin: -5px 0 0 0;
+            margin: -2px 0 0 0;
+            font-weight: 400;
         }
         p {
+            font-weight: 700;
             margin: 0;
         }
     }

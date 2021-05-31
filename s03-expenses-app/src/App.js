@@ -1,6 +1,5 @@
 import './scss/App.scss'
 import { useState } from 'react'
-import Button from '@material-ui/core/Button'
 import Container from '@material-ui/core/Container'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -12,47 +11,9 @@ import Grid from '@material-ui/core/Grid'
 import Expenses from './components/Expenses/Expenses'
 import NewExpense from './components/NewExpense/NewExpense'
 
+import DUMMY_EXPENSES from './data/data'
+
 const App = () => {
-
-    const DUMMY_EXPENSES = [
-        {
-            id: 'e1',
-            title: 'Toilet Paper',
-            amount: 94.12,
-            date: new Date(2020, 7, 14)
-        },
-        {
-            id: 'e2',
-            title: 'New TV',
-            amount: 399.49,
-            date: new Date(2021, 2, 12)
-        },
-        {
-            id: 'e3',
-            title: 'Car Insurance',
-            amount: 294.67,
-            date: new Date(2019, 2, 28)
-        },
-        {
-            id: 'e4',
-            title: 'New Desk (Wooden)',
-            amount: 150,
-            date: new Date(2021, 5, 12)
-        },
-        {
-            id: 'e5',
-            title: 'Sonos Speaker',
-            amount: 299,
-            date: new Date(2021, 8, 17)
-        },
-        {
-            id: 'e6',
-            title: 'Food outside',
-            amount: 45,
-            date: new Date(2021, 0, 17)
-        }
-    ]
-
     const [expenses, setExpenses] = useState(DUMMY_EXPENSES)
 
     const addExpenseHandler = (enteredExpenseData) => {
@@ -71,7 +32,9 @@ const App = () => {
                     <Typography variant='h1' className='black'>
                         EXPENSE TRACKER
                     </Typography>
-                    <Button className='bg-yellow'>Expense tracker</Button>
+                    <a href='https://github.com/academind/react-complete-guide-code/tree/05-rendering-lists-conditional-content'>
+                        REPO
+                    </a>
                 </Toolbar>
             </AppBar>
             <Container maxWidth='lg'>

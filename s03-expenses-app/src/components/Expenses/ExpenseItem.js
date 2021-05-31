@@ -11,13 +11,13 @@ const ExpenseItem = (props) => {
                     <table>
                         <tbody>
                             <tr>
-                                <td>
+                                <td className='date'>
                                     <ExpenseDate date={props.date} />
                                 </td>
                                 <td>
                                     <h3>{props.title}</h3>
                                 </td>
-                                <td>{props.amount}</td>
+                                <td className='alright'>{props.amount}<small>$</small></td>
                             </tr>
                         </tbody>
                     </table>
