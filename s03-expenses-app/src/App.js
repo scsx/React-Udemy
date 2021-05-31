@@ -1,4 +1,5 @@
 import './scss/App.scss'
+import { useState } from 'react'
 import Button from '@material-ui/core/Button'
 import Container from '@material-ui/core/Container'
 import AppBar from '@material-ui/core/AppBar'
@@ -12,7 +13,8 @@ import Expenses from './components/Expenses/Expenses'
 import NewExpense from './components/NewExpense/NewExpense'
 
 const App = () => {
-    const expenses = [
+
+    const DUMMY_EXPENSES = [
         {
             id: 'e1',
             title: 'Toilet Paper',
@@ -39,12 +41,19 @@ const App = () => {
         }
     ]
 
-    const saveExpenseDataHandler = (enteredExpenseData) => {
+    const [expenses, setExpenses] = useState(DUMMY_EXPENSES)
+
+    const addExpenseHandler = (enteredExpenseData) => {
+    console.log(enteredExpenseData)
+        setExpenses((prevExpenses) => {
+            return [enteredExpenseData, ...prevExpenses]
+        })
+        /*
         const expenseData = {
             ...enteredExpenseData,
             id: Math.random().toString()
         }
-        console.log(expenseData)
+        */
     }
 
     return (
@@ -66,9 +75,7 @@ const App = () => {
                         <Expenses items={expenses} />
                     </Grid>
                     <Grid item xs={4}>
-                        <NewExpense
-                            onSavedExpenseData={saveExpenseDataHandler}
-                        />
+                        <NewExpense onAddExpenseData={addExpenseHandler} />
                     </Grid>
                 </Grid>
             </Container>

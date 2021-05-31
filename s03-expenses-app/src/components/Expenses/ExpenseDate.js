@@ -1,6 +1,7 @@
 import Chip from "@material-ui/core/Chip"
 
 const ExpenseDate = (propsOrAnyName) => {
+    console.log(propsOrAnyName)
     const month = propsOrAnyName.date.toLocaleString("en-US", {
         month: "long",
     })

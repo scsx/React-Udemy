@@ -5,16 +5,16 @@ import CardContent from '@material-ui/core/CardContent'
 
 const NewExpense = (props) => {
     const [userInput, setUserInput] = useState({
-        enteredTitle: '',
-        enteredAmount: '',
-        enteredDate: ''
+        title: '',
+        amount: '',
+        date: ''
     })
 
     const titleChangeHandler = (event) => {
         setUserInput((prevState) => {
             return {
                 ...prevState,
-                enteredTitle: event.target.value
+                title: event.target.value
             }
         })
     }
@@ -23,7 +23,7 @@ const NewExpense = (props) => {
         setUserInput((prevState) => {
             return {
                 ...prevState,
-                enteredAmount: event.target.value
+                amount: event.target.value
             }
         })
     }
@@ -32,18 +32,18 @@ const NewExpense = (props) => {
         setUserInput((prevState) => {
             return {
                 ...prevState,
-                enteredDate: new Date(event.target.value)
+                date: new Date(event.target.value)
             }
         })
     }
 
     const submitHandler = (event) => {
         event.preventDefault()
-        props.onSavedExpenseData(userInput)
+        props.onAddExpenseData(userInput)
         setUserInput({
-            enteredTitle: '',
-            enteredAmount: '',
-            enteredDate: ''
+            title: '',
+            amount: '',
+            date: ''
         })
     }
 
@@ -56,7 +56,7 @@ const NewExpense = (props) => {
                             <label>Title</label>
                             <input
                                 type='text'
-                                value={userInput.enteredTitle}
+                                value={userInput.title}
                                 onChange={titleChangeHandler}
                             />
                         </div>
@@ -64,7 +64,7 @@ const NewExpense = (props) => {
                             <label>Amount</label>
                             <input
                                 type='number'
-                                value={userInput.enteredAmount}
+                                value={userInput.amount}
                                 onChange={amountChangeHandler}
                                 min='0.0'
                                 step='1'
@@ -74,7 +74,7 @@ const NewExpense = (props) => {
                             <label>Date</label>
                             <input
                                 type='date'
-                                value={userInput.enteredDate}
+                                value={userInput.date}
                                 onChange={dateChangeHandler}
                                 min='2019-01-01'
                                 max='2022-12-31'
