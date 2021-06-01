@@ -15,7 +15,7 @@
     margin: -26rem auto 3rem auto;
     padding: 1rem;
     padding-top: 26rem;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 1);
+    box-shadow: 0 2px 12px rgb(0 0 0 / 43%);
     border-radius: 50%;
     text-align: center;
 }
