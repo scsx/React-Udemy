@@ -1,0 +1,39 @@
+{
+    "name": "react-the-complete-guide",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/react": "^9.4.1",
+        "@testing-library/user-event": "^7.2.1",
+        "bootstrap": "^4.6.0",
+        "react": "^17.0.2",
+        "react-bootstrap": "^1.6.0",
+        "react-dom": "^17.0.2",
+        "react-scripts": "4.0.3",
+        "node-sass-chokidar": "^1.5.0"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "build-css": "node-sass-chokidar src/ -o src/",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive --usePolling --polling-interval 1000"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
+}

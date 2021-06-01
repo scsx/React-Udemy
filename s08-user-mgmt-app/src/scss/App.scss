@@ -1,0 +1,31 @@
+$lightgrey: #f4f4f4;
+$lightblue: #017bfe;
+$darkblue: #102239;
+
+body {
+    background-color: $lightgrey;
+}
+
+.maingrid {
+    align-items: stretch;
+    min-height: 100vh;
+
+    h2 {
+        padding: 1rem;
+        margin: 0;
+
+        &.blue {
+            background-color: $lightblue;
+            color: white;
+        }
+    }
+}
+
+.console {
+    background-color: $darkblue;
+    padding: 0;
+}
+
+.users {
+    padding: 0;
+}
