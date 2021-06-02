@@ -5,7 +5,8 @@ import {
     Col,
     Popover,
     OverlayTrigger,
-    ListGroup
+    ListGroup,
+    Button
 } from 'react-bootstrap'
 import axios from 'axios'
 import RandomUser from './RandomUsers/RandomUser'
@@ -19,12 +20,10 @@ function App() {
         })
     }, [])
 
-    const onEnter = () => {
-        return
-    }
-
-    const onExit = () => {
-        return
+    function refreshPage() {
+        axios.get('https://randomuser.me/api/?results=5').then((res) => {
+            setPeople(res.data.results)
+        })
     }
 
     return (
@@ -46,19 +45,21 @@ function App() {
                                     return (
                                         <OverlayTrigger
                                             key={key}
-                                            onEnter={onEnter}
-                                            onExiting={onExit}
-                                            trigger={['focus', 'click']}
+                                            trigger={['focus', 'hover']}
                                             placement='left'
                                             overlay={
                                                 <Popover>
-                                                    <RandomUser userObj={user} />
+                                                    <RandomUser
+                                                        userObj={user}
+                                                    />
                                                 </Popover>
                                             }>
                                             <ListGroup.Item>
                                                 <h5>
                                                     {`${user.name.first} ${user.name.last}`}
-                                                    <small>{user.id.name}</small>
+                                                    <small>
+                                                        {user.id.name}
+                                                    </small>
                                                 </h5>
                                                 <p>{`${user.dob.age} years`}</p>
                                                 <p>{user.location.country}</p>
@@ -67,6 +68,9 @@ function App() {
                                     )
                                 })}
                             </ListGroup>
+                            <Button className='mt-4' onClick={refreshPage}>
+                                Get new users
+                            </Button>
                         </div>
                     </div>
                 </Col>

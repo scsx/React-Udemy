@@ -7,3 +7,6 @@
 - Components: src/RandomUsers/
 - Users https://randomuser.me/
 - Weather https://openweathermap.org
+
+### Preview
+(src/images/preview.png)

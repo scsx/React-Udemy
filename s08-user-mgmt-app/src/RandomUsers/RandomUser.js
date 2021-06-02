@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Popover, Button } from 'react-bootstrap'
 import axios from 'axios'
+import WeatherWidget from './WeatherWidget'
 
 const RandomUser = (props) => {
     const [loading, setLoading] = useState(true)
@@ -15,13 +16,19 @@ const RandomUser = (props) => {
         main: {
             temp: '',
             temp_min: '',
-            temp_max: ''
+            temp_max: '',
+            feels_like: ''
+        },
+        wind: {
+            deg: 73,
+            gust: 0.94,
+            speed: 0.99
         }
     })
     const user = props.userObj
-    const API_KEY = process.env.REACT_APP_OPENWEATHERMAP_API_KEY
 
     useEffect(() => {
+        const API_KEY = process.env.REACT_APP_OPENWEATHERMAP_API_KEY
         axios
             .get(
                 `https://api.openweathermap.org/data/2.5/weather?lat=${user.location.coordinates.latitude}&lon=${user.location.coordinates.longitude}&units=metric&appid=${API_KEY}`
@@ -30,7 +37,7 @@ const RandomUser = (props) => {
                 setInfo(res.data)
                 setLoading(false)
             })
-    }, [])
+    }, [user.location.coordinates.latitude, user.location.coordinates.longitude])
 
     return (
         <div className='randomuser'>
@@ -45,32 +52,22 @@ const RandomUser = (props) => {
                     <Button variant='primary' size='sm'>
                         {user.email}
                     </Button>
-                    <p>{`${user.location.street.number}, ${user.location.street.name}`}</p>
-                    <p>{user.location.city}</p>
-                    <p>{user.location.country}</p>
+                    <p>
+                        <span>{`${user.location.street.number}, ${user.location.street.name}`}</span>
+                    </p>
+                    <p>
+                        <span>{user.location.city}</span>
+                    </p>
+                    <p>
+                        <span>{user.location.country}</span>
+                    </p>
                 </div>
-                {loading ? (
-                    'loading'
-                ) : (
-                    <div className='weather'>
-                        <div className='weatherCard'>
-                            <div className='currentTemp'>
-                                <span className='temp'>{info.main.temp}º</span>
-                                <span className='location'>Brussels</span>
-                            </div>
-                            <div className='currentWeather'>
-                                <span className='conditions'>
-                                    <img src={`http://openweathermap.org/img/w/${info.weather[0].icon}.png`} />
-                                </span>
-                                <div className='info'>
-                                    <span className='rain'>{info.main.temp_min}</span>
-                                    <span className='wind'>10 MPH</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                )}
             </Popover.Content>
+            {loading ? (
+                <div className='loading'>Loading</div>
+            ) : (
+                <WeatherWidget location={info} />
+            )}
         </div>
     )
 }
