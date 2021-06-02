@@ -6,5 +6,4 @@
 ### Extra: random users
 - Components: src/RandomUsers/
 - Users https://randomuser.me/
-- Weather https://www.metaweather.com/api/
-- CORS https://cors-anywhere.herokuapp.com/
+- Weather https://openweathermap.org
