@@ -10,19 +10,14 @@ import {
 } from 'react-bootstrap'
 import axios from 'axios'
 import RandomUser from './RandomUsers/RandomUser'
+import Lisbon from './Lisbon'
 
-function App() {
+const App = () => {
     const [people, setPeople] = useState([])
-    const [isbon, setLisbon] = useState({})
 
     useEffect(() => {
-        const API_KEY = process.env.REACT_APP_OPENWEATHERMAP_API_KEY
         axios.get('https://randomuser.me/api/?results=5').then((res) => {
             setPeople(res.data.results)
-        })
-        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=Lisbon&units=metric&appid=${API_KEY}`).then((res) => {
-            setLisbon(res.data)
-            console.log(res)
         })
     }, [])
 
@@ -39,7 +34,14 @@ function App() {
                     <h2 className='blue'>New user</h2>
                 </Col>
                 <Col className='users'>
-                    <h2 className='grey'>User List</h2>
+                    <Row className='title'>
+                        <Col>
+                            <h2 className='grey'>User List</h2>
+                        </Col>
+                        <Col className='flex2'>
+                            <Lisbon />
+                        </Col>
+                    </Row>
                     <div className='usergrid'>
                         <div className='usercol exercise'>
                             <h3>Common users</h3>
