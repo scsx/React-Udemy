@@ -9,4 +9,4 @@
 - Weather https://openweathermap.org
 
 ### Preview
-(src/images/preview.png)
+![alt text](src/images/preview.png)
