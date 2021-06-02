@@ -13,10 +13,16 @@ import RandomUser from './RandomUsers/RandomUser'
 
 function App() {
     const [people, setPeople] = useState([])
+    const [isbon, setLisbon] = useState({})
 
     useEffect(() => {
+        const API_KEY = process.env.REACT_APP_OPENWEATHERMAP_API_KEY
         axios.get('https://randomuser.me/api/?results=5').then((res) => {
             setPeople(res.data.results)
+        })
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=Lisbon&units=metric&appid=${API_KEY}`).then((res) => {
+            setLisbon(res.data)
+            console.log(res)
         })
     }, [])
 
