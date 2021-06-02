@@ -1,0 +1,284 @@
+{
+    "results": [{
+        "gender": "male",
+        "name": {
+            "title": "Mr",
+            "first": "Lauri",
+            "last": "Heikkinen"
+        },
+        "location": {
+            "street": {
+                "number": 5647,
+                "name": "Bulevardi"
+            },
+            "city": "Kokemäki",
+            "state": "Päijät-Häme",
+            "country": "Finland",
+            "postcode": 44003,
+            "coordinates": {
+                "latitude": "-6.6169",
+                "longitude": "-19.3496"
+            },
+            "timezone": {
+                "offset": "-12:00",
+                "description": "Eniwetok, Kwajalein"
+            }
+        },
+        "email": "lauri.heikkinen@example.com",
+        "login": {
+            "uuid": "72090596-f4e0-4812-aeb2-9687012eca35",
+            "username": "sadcat662",
+            "password": "tinman",
+            "salt": "8r5aHhkN",
+            "md5": "cafc0cbaa962a32c0719531ee218fd04",
+            "sha1": "7de993840b1568d39dc8adf7cd0350a15814fe3c",
+            "sha256": "fa62e9308a25370eade5806d1632c93ccc263e59dac85772a7ecde107acdfb8a"
+        },
+        "dob": {
+            "date": "1967-12-21T23:37:19.257Z",
+            "age": 54
+        },
+        "registered": {
+            "date": "2011-07-10T16:14:58.921Z",
+            "age": 10
+        },
+        "phone": "02-118-762",
+        "cell": "043-099-51-08",
+        "id": {
+            "name": "HETU",
+            "value": "NaNNA685undefined"
+        },
+        "picture": {
+            "large": "https://randomuser.me/api/portraits/men/45.jpg",
+            "medium": "https://randomuser.me/api/portraits/med/men/45.jpg",
+            "thumbnail": "https://randomuser.me/api/portraits/thumb/men/45.jpg"
+        },
+        "nat": "FI"
+    }, {
+        "gender": "male",
+        "name": {
+            "title": "Mr",
+            "first": "Florent",
+            "last": "Rodriguez"
+        },
+        "location": {
+            "street": {
+                "number": 8887,
+                "name": "Avenue de la République"
+            },
+            "city": "Saint-Étienne",
+            "state": "Haut-Rhin",
+            "country": "France",
+            "postcode": 21005,
+            "coordinates": {
+                "latitude": "-81.0002",
+                "longitude": "146.5501"
+            },
+            "timezone": {
+                "offset": "-10:00",
+                "description": "Hawaii"
+            }
+        },
+        "email": "florent.rodriguez@example.com",
+        "login": {
+            "uuid": "f910d9d8-854e-41e0-9512-42fd0bd95609",
+            "username": "greengoose141",
+            "password": "monica",
+            "salt": "jqh81bT3",
+            "md5": "f64615acf7a0462cedd61c37b1f8e917",
+            "sha1": "42c1977e536d6819aa7c728a7a80237f66cd3758",
+            "sha256": "9ec9f0fa74a4d502d61e2f487bd5c542dd97844eed1ce5ef91b56b51f36d4520"
+        },
+        "dob": {
+            "date": "1978-02-26T23:25:11.937Z",
+            "age": 43
+        },
+        "registered": {
+            "date": "2003-08-15T02:58:30.150Z",
+            "age": 18
+        },
+        "phone": "05-38-20-11-46",
+        "cell": "06-16-06-19-21",
+        "id": {
+            "name": "INSEE",
+            "value": "1NNaN61837353 20"
+        },
+        "picture": {
+            "large": "https://randomuser.me/api/portraits/men/64.jpg",
+            "medium": "https://randomuser.me/api/portraits/med/men/64.jpg",
+            "thumbnail": "https://randomuser.me/api/portraits/thumb/men/64.jpg"
+        },
+        "nat": "FR"
+    }, {
+        "gender": "male",
+        "name": {
+            "title": "Mr",
+            "first": "Leon",
+            "last": "Mason"
+        },
+        "location": {
+            "street": {
+                "number": 8064,
+                "name": "Valwood Pkwy"
+            },
+            "city": "Dubbo",
+            "state": "South Australia",
+            "country": "Australia",
+            "postcode": 6141,
+            "coordinates": {
+                "latitude": "-75.5978",
+                "longitude": "52.0505"
+            },
+            "timezone": {
+                "offset": "+9:00",
+                "description": "Tokyo, Seoul, Osaka, Sapporo, Yakutsk"
+            }
+        },
+        "email": "leon.mason@example.com",
+        "login": {
+            "uuid": "d5c40316-a2a0-4a2f-8292-d5c595310399",
+            "username": "redostrich275",
+            "password": "rt6ytere",
+            "salt": "cC2QfosA",
+            "md5": "c91a10c71fbdaba7d17df6e5cd3d7c67",
+            "sha1": "023d17b1cca8347aa16dc6aed4c87f7c8b5590fe",
+            "sha256": "bbba17c440b99293cfd53d53c2e804912e22290da5fd02ddf8965b2d274a8b66"
+        },
+        "dob": {
+            "date": "1945-03-10T18:46:08.047Z",
+            "age": 76
+        },
+        "registered": {
+            "date": "2014-12-28T14:22:44.960Z",
+            "age": 7
+        },
+        "phone": "08-4034-4825",
+        "cell": "0413-186-159",
+        "id": {
+            "name": "TFN",
+            "value": "066585011"
+        },
+        "picture": {
+            "large": "https://randomuser.me/api/portraits/men/55.jpg",
+            "medium": "https://randomuser.me/api/portraits/med/men/55.jpg",
+            "thumbnail": "https://randomuser.me/api/portraits/thumb/men/55.jpg"
+        },
+        "nat": "AU"
+    }, {
+        "gender": "female",
+        "name": {
+            "title": "Mademoiselle",
+            "first": "Nora",
+            "last": "Dufour"
+        },
+        "location": {
+            "street": {
+                "number": 2269,
+                "name": "Rue des Cuirassiers"
+            },
+            "city": "Liestal",
+            "state": "Graubünden",
+            "country": "Switzerland",
+            "postcode": 9380,
+            "coordinates": {
+                "latitude": "70.1561",
+                "longitude": "110.3293"
+            },
+            "timezone": {
+                "offset": "+10:00",
+                "description": "Eastern Australia, Guam, Vladivostok"
+            }
+        },
+        "email": "nora.dufour@example.com",
+        "login": {
+            "uuid": "d59c07da-1346-4caa-b0b8-e60577d39241",
+            "username": "crazybutterfly593",
+            "password": "1492",
+            "salt": "zHlzLBbd",
+            "md5": "cf5de823f14572f3d01b5649eb13c3b0",
+            "sha1": "85c5933f23018e6dff1b3c7c57f2837d7d7da299",
+            "sha256": "07ed8f443072e0d04475e341c86944b5bfdb648242ff1540e9e508378c159265"
+        },
+        "dob": {
+            "date": "1968-02-22T04:42:10.866Z",
+            "age": 53
+        },
+        "registered": {
+            "date": "2009-12-29T15:06:27.860Z",
+            "age": 12
+        },
+        "phone": "075 059 36 48",
+        "cell": "075 842 33 62",
+        "id": {
+            "name": "AVS",
+            "value": "756.4680.3834.61"
+        },
+        "picture": {
+            "large": "https://randomuser.me/api/portraits/women/69.jpg",
+            "medium": "https://randomuser.me/api/portraits/med/women/69.jpg",
+            "thumbnail": "https://randomuser.me/api/portraits/thumb/women/69.jpg"
+        },
+        "nat": "CH"
+    }, {
+        "gender": "female",
+        "name": {
+            "title": "Miss",
+            "first": "Sofia",
+            "last": "Pascual"
+        },
+        "location": {
+            "street": {
+                "number": 4796,
+                "name": "Calle del Arenal"
+            },
+            "city": "Alcalá de Henares",
+            "state": "Cantabria",
+            "country": "Spain",
+            "postcode": 23686,
+            "coordinates": {
+                "latitude": "56.0086",
+                "longitude": "47.5440"
+            },
+            "timezone": {
+                "offset": "+5:45",
+                "description": "Kathmandu"
+            }
+        },
+        "email": "sofia.pascual@example.com",
+        "login": {
+            "uuid": "28f1b98d-9122-492b-83df-3b8506826970",
+            "username": "redduck306",
+            "password": "weezer",
+            "salt": "pb381joG",
+            "md5": "efd5cc2ea9e0a87fa3c8947405dc7f12",
+            "sha1": "88bef3ef62a5ae873adb071aefdc029dc8343227",
+            "sha256": "3e83dd4d3a775eef73332fa98e39aaa56e7629abec91d308845aac348c5d395e"
+        },
+        "dob": {
+            "date": "1956-05-13T20:53:38.595Z",
+            "age": 65
+        },
+        "registered": {
+            "date": "2003-12-24T12:08:05.575Z",
+            "age": 18
+        },
+        "phone": "901-323-971",
+        "cell": "650-970-782",
+        "id": {
+            "name": "DNI",
+            "value": "36797864-Q"
+        },
+        "picture": {
+            "large": "https://randomuser.me/api/portraits/women/27.jpg",
+            "medium": "https://randomuser.me/api/portraits/med/women/27.jpg",
+            "thumbnail": "https://randomuser.me/api/portraits/thumb/women/27.jpg"
+        },
+        "nat": "ES"
+    }],
+    "info": {
+        "seed": "2b36181f2e0bf83d",
+        "results": 5,
+        "page": 1,
+        "version": "1.3"
+    }
+}

@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+$darkgrey: #333;
 $lightgrey: #f4f4f4;
 $lightblue: #017bfe;
 $darkblue: #102239;
 
 body {
     background-color: $lightgrey;
+    color: $darkgrey;
+    font-family: 'Inter', sans-serif;
 }
 
 .maingrid {
@@ -13,10 +18,18 @@ body {
     h2 {
         padding: 1rem;
         margin: 0;
+        font-weight: 700;
 
         &.blue {
             background-color: $lightblue;
             color: white;
+        }
+
+        &.grey {
+            position: absolute;
+            background-color: darken($lightgrey, 10%);
+            z-index: 2;
+            width: 100%;
         }
     }
 }
@@ -27,5 +40,94 @@ body {
 }
 
 .users {
+    position: relative;
     padding: 0;
+
+    .usergrid {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: stretch;
+        width: 100%;
+        height: 100%;
+
+        .usercol {
+            padding: 5.5rem 1rem 3rem 1rem;
+
+            &.exercise {
+                background-color: white;
+                flex-grow: 1;
+            }
+
+            &.practice {
+                width: 25%;
+
+                .list-group {
+                    .list-group-item {
+                        cursor: pointer;
+
+                        h5 {
+                            font-weight: 700;
+                            font-size: 1.25rem;
+                            display: block;
+                            color: $lightblue;
+                            margin-bottom: 0;
+
+                            small {
+                                color: $darkgrey;
+                                font-weight: 400;
+                                font-size: 0.75rem;
+                                margin-left: 5px;
+                            }
+                        }
+
+                        p {
+                            font-size: 1rem;
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.popover {
+    max-width: 350px;
+    width: 350px;
+    .popover-body {
+        background-size: cover;
+        background-position: top center;
+        padding: 0;
+
+        .gradient {
+            padding: 0.75rem 0.75rem 1rem 0.75rem;
+            background-image: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0),
+                rgba(0, 0, 0, 0.5)
+            );
+
+            h4 {
+                color: white;
+                font-size: 4rem;
+                line-height: 1;
+            }
+        }
+
+        .details {
+            padding: 0.75rem 0.75rem 1rem 0.75rem;
+            p {
+                font-size: 1.25rem;
+                margin-bottom: 0;
+                color: white;
+            }
+
+            .btn {
+                margin-bottom: 1rem;
+                font-size: 0.8rem;
+                line-height: 1;
+            }
+        }
+    }
 }
