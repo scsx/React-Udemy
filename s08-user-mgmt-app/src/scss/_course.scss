@@ -1,0 +1,22 @@
+.adduser {
+    padding: 1rem;
+    .newuserform {
+        margin-top: 1rem;
+
+        label {
+            color: white;
+        }
+
+        .form-control {
+            border: 1px solid #102239;
+        }
+
+        .text-muted {
+            color: #ccc !important;
+        }
+    }
+}
+
+.coursecard {
+    background-color: #ffffff1c;
+}

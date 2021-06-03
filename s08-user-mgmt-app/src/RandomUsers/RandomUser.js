@@ -28,16 +28,27 @@ const RandomUser = (props) => {
     const user = props.userObj
 
     useEffect(() => {
+        // isMounted to prevent the error: Warning: Can't perform a React state update on an unmounted component.
+        let isMounted = true
         const API_KEY = process.env.REACT_APP_OPENWEATHERMAP_API_KEY
         axios
             .get(
                 `https://api.openweathermap.org/data/2.5/weather?lat=${user.location.coordinates.latitude}&lon=${user.location.coordinates.longitude}&units=metric&appid=${API_KEY}`
             )
             .then((res) => {
-                setInfo(res.data)
-                setLoading(false)
+                if (isMounted) {
+                    setInfo(res.data)
+                    setLoading(false)
+                }
             })
-    }, [user.location.coordinates.latitude, user.location.coordinates.longitude])
+
+        return () => {
+            isMounted = false
+        }
+    }, [
+        user.location.coordinates.latitude,
+        user.location.coordinates.longitude
+    ])
 
     return (
         <div className='randomuser'>

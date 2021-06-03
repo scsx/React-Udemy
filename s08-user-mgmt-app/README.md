@@ -3,7 +3,7 @@
 ### CSS
 - https://react-bootstrap.github.io/
 
-### Extra: random users
+### Extra: random users & weather
 - Components: src/RandomUsers/
 - Users https://randomuser.me/
 - Weather https://openweathermap.org

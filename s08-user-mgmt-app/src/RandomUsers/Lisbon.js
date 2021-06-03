@@ -25,8 +25,6 @@ const Lisbon = () => {
             )
             .then((res) => {
                 setLisbon(res.data)
-                console.log(res.data)
-                console.log(lisbon.main.temp)
             })
     }, [])
 
@@ -56,7 +54,7 @@ const Lisbon = () => {
                 MAX
                 <b>{lisbon.main.temp_max}º</b>
             </Col>
-            <Col className='flex2'>
+            <Col className='flex2 desktop'>
                 SUN UP / DOWN
                 <b>{getTimeFromDate(lisbon.sys.sunrise)} / {getTimeFromDate(lisbon.sys.sunset)}</b>
             </Col>
