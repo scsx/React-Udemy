@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Form } from 'react-bootstrap'
 import CourseCard from '../UI/CourseCard'
 import CourseButton from '../UI/CourseButton'
+import ErrorModal from '../UI/ErrorModal'
 
 const AddUser = (props) => {
     const [enteredUsername, setEnteredUsername] = useState('')
@@ -17,7 +18,7 @@ const AddUser = (props) => {
         ) {
             setError({
                 title: 'Invalid input',
-                message: 'Please enter a valid name and age'
+                message: 'Please enter a valid name and age.'
             })
             return
         }
@@ -25,7 +26,7 @@ const AddUser = (props) => {
         if (+enteredAge < 1) {
             setError({
                 title: 'Invalid age',
-                message: 'Please enter a valid age (> 0).'
+                message: 'Please enter a valid age > 0.'
             })
             return
         }
@@ -43,9 +44,16 @@ const AddUser = (props) => {
         setEnteredAge(event.target.value)
     }
 
+    const dismissErrorHandler = () => {
+        setError(null)
+    }
+
     return (
         <CourseCard className='classFromParent'>
             <div className='adduser'>
+
+                {error && <ErrorModal title={error.title} message={error.message} onConfirm={dismissErrorHandler} />}
+                
                 <Form className='newuserform' onSubmit={addUserHandler}>
                     <Form.Group>
                         <Form.Label htmlFor='userinput'>Username</Form.Label>
