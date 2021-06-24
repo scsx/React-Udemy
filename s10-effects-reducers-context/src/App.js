@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import Login from './components/Login/Login'
+import LoginReducer from './components/Login/LoginReducer'
 import Home from './components/Home/Home'
 import MainHeader from './components/MainHeader/MainHeader'
 
@@ -33,7 +34,17 @@ function App() {
                     isAuthenticated={isLoggedIn}
                     onLogout={logoutHandler}
                 />
-                {!isLoggedIn && <Login onLogin={loginHandler} />}
+                {!isLoggedIn && (
+                    <div className='row'>
+                        <div className='col'>
+                            <Login onLogin={loginHandler} />
+                        </div>
+
+                        <div className='col'>
+                            <LoginReducer onLogin={loginHandler} />
+                        </div>
+                    </div>
+                )}
                 {isLoggedIn && <Home onLogout={logoutHandler} />}
             </main>
         </React.Fragment>

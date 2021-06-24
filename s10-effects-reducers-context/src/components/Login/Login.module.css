@@ -4,6 +4,12 @@
   max-width: 40rem;
 }
 
+.login h3 {
+  color: #c72030;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
 .control {
   margin: 1rem 0;
   display: flex;

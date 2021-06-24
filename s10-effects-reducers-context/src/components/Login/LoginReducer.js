@@ -4,7 +4,7 @@ import Card from '../UI/Card/Card'
 import classes from './Login.module.css'
 import Button from '../UI/Button/Button'
 
-const Login = (props) => {
+const LoginReducer = (props) => {
     const [enteredEmail, setEnteredEmail] = useState('')
     const [emailIsValid, setEmailIsValid] = useState()
     const [enteredPassword, setEnteredPassword] = useState('')
@@ -51,7 +51,7 @@ const Login = (props) => {
 
     return (
         <Card className={'card ' + classes.login}>
-            <h3>Login with useEffect</h3>
+            <h3>Login with useReducer</h3>
             <form onSubmit={submitHandler}>
                 <div
                     className={`${classes.control} ${
@@ -92,4 +92,4 @@ const Login = (props) => {
     )
 }
 
-export default Login
+export default LoginReducer
