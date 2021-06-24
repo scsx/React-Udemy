@@ -7,10 +7,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #ffec68;
+    background: #fff;
     padding: 0 2rem;
+    border-bottom: 1px solid #ccc;
 }
 
 .main-header h1 {
-    color: #0e4496;
+    color: #c72030;
 }
