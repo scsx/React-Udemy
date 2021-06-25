@@ -13,7 +13,6 @@ const MainHeader = (props) => {
                     </div>
                     <div className='col text-end'>
                         <Navigation
-                            isLoggedIn={props.isAuthenticated}
                             onLogout={props.onLogout}
                         />
                     </div>

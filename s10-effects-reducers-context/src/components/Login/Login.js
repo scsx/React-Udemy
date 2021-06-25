@@ -51,7 +51,7 @@ const Login = (props) => {
 
     return (
         <Card className={'card ' + classes.login}>
-            <h3>Login with useEffect</h3>
+            <h3>Login with useEffect only</h3>
             <form onSubmit={submitHandler}>
                 <div
                     className={`${classes.control} ${
@@ -60,7 +60,7 @@ const Login = (props) => {
                     <label htmlFor='email'>E-Mail</label>
                     <input
                         type='email'
-                        id='email'
+                        id='email1'
                         value={enteredEmail}
                         onChange={emailChangeHandler}
                         onBlur={validateEmailHandler}
@@ -73,7 +73,7 @@ const Login = (props) => {
                     <label htmlFor='password'>Password</label>
                     <input
                         type='password'
-                        id='password'
+                        id='password1'
                         value={enteredPassword}
                         onChange={passwordChangeHandler}
                         onBlur={validatePasswordHandler}
