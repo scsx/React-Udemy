@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 
 import AuthContext from './store/auth-context'
 import Login from './components/Login/Login'
@@ -7,44 +7,19 @@ import Home from './components/Home/Home'
 import MainHeader from './components/MainHeader/MainHeader'
 
 function App() {
-    const [isLoggedIn, setIsLoggedIn] = useState(false)
-
-    useEffect(() => {
-        const storedUserLogInfo = localStorage.getItem('isLoggedIn')
-        if (storedUserLogInfo === 'LOGGED_IN') {
-            setIsLoggedIn(true)
-        }
-    }, [])
-
-    const loginHandler = (email, password) => {
-        // We should of course check email and password
-        // But it's just a dummy/ demo anyways
-        localStorage.setItem('isLoggedIn', 'LOGGED_IN')
-        setIsLoggedIn(true)
-    }
-
-    const logoutHandler = () => {
-        setIsLoggedIn(false)
-        localStorage.setItem('isLoggedIn', 'LOGGED_OUT')
-    }
+    const ctx = useContext(AuthContext)
 
     return (
-        <AuthContext.Provider
-            value={{
-                isLoggedIn: isLoggedIn,
-                onLogout: logoutHandler
-            }}>
-            <main className='container'>
-                <MainHeader />
-                {!isLoggedIn && (
-                    <div className='logins'>
-                        <Login onLogin={loginHandler} />
-                        <LoginReducer onLogin={loginHandler} />
-                    </div>
-                )}
-                {isLoggedIn && <Home onLogout={logoutHandler} />}
-            </main>
-        </AuthContext.Provider>
+        <main className='container'>
+            <MainHeader />
+            {!ctx.isLoggedIn && (
+                <div className='logins'>
+                    <Login onLogin={ctx.loginHandler} />
+                    <LoginReducer onLogin={ctx.loginHandler} />
+                </div>
+            )}
+            {ctx.isLoggedIn && <Home onLogout={ctx.logoutHandler} />}
+        </main>
     )
 }
 

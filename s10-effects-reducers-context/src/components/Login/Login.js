@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 
 import Card from '../UI/Card/Card'
 import classes from './Login.module.css'
 import Button from '../UI/Button/Button'
+import AuthContext from '../../store/auth-context'
 
 const Login = (props) => {
     const [enteredEmail, setEnteredEmail] = useState('')
@@ -10,6 +11,8 @@ const Login = (props) => {
     const [enteredPassword, setEnteredPassword] = useState('')
     const [passwordIsValid, setPasswordIsValid] = useState()
     const [formIsValid, setFormIsValid] = useState(false)
+
+    const authCtx = useContext(AuthContext)
 
     useEffect(() => {
         // Using debouncing (Javascript technique, not React)
@@ -46,7 +49,7 @@ const Login = (props) => {
 
     const submitHandler = (event) => {
         event.preventDefault()
-        props.onLogin(enteredEmail, enteredPassword)
+        authCtx.onLogin(enteredEmail, enteredPassword)
     }
 
     return (
