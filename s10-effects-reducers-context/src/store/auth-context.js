@@ -13,6 +13,7 @@ export const CustomAuthContextProvider = (props) => {
         const storedUserLogInfo = localStorage.getItem('isLoggedIn')
         if (storedUserLogInfo === 'LOGGED_IN') {
             setIsLoggedIn(true)
+            document.body.classList.add('loggedin')
         }
     }, [])
 
@@ -21,11 +22,13 @@ export const CustomAuthContextProvider = (props) => {
         // But it's just a dummy/ demo anyways
         localStorage.setItem('isLoggedIn', 'LOGGED_IN')
         setIsLoggedIn(true)
+        document.body.classList.toggle('loggedin')
     }
 
     const logoutHandler = () => {
         setIsLoggedIn(false)
         localStorage.setItem('isLoggedIn', 'LOGGED_OUT')
+        document.body.classList.toggle('loggedin')
     }
 
     return (
