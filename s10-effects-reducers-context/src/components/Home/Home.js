@@ -1,12 +1,14 @@
 import React from 'react'
 
 import Card from '../UI/Card/Card'
+import Button from '../UI/Button/Button'
 import classes from './Home.module.css'
 
 const Home = (props) => {
     return (
         <Card className={classes.home}>
-            <p className="fs-1">Welcome back!</p>
+            <p className='fs-1'>Welcome back!</p>
+            <Button onClick={props.onLogout}>Logout</Button>
         </Card>
     )
 }

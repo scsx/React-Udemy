@@ -3,7 +3,7 @@ import React from 'react'
 import Navigation from './Navigation'
 import classes from './MainHeader.module.css'
 
-const MainHeader = (props) => {
+const MainHeader = () => {
     return (
         <header className={classes['main-header']}>
             <div className='container'>
@@ -12,9 +12,7 @@ const MainHeader = (props) => {
                         <h1>A Typical Page</h1>
                     </div>
                     <div className='col text-end'>
-                        <Navigation
-                            onLogout={props.onLogout}
-                        />
+                        <Navigation />
                     </div>
                 </div>
             </div>
