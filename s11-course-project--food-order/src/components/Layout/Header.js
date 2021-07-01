@@ -4,19 +4,21 @@ import foodImage from '../../assets/food.jpg'
 import HeaderCartButton from '../Layout/HeaderCartButton'
 
 const Header = (props) => {
-    console.log(foodImage)
     return (
         <header className='siteheader'>
             <div className='content'>
-                <div className='container'>
-                    <div className='row'>
-                        <div className='col'>
-                            <h1>Meals</h1>
-                        </div>
-                        <div className='col alright'>
-                            <HeaderCartButton />
-                        </div>
+                <div className='d-flex'>
+                    <div className='flex-grow-1'>
+                        {/* <div className="hamburger">
+                            <div className="center">
+                                <div></div>
+                            </div>
+                        </div> */}
+                        <h1>
+                            M<small>y</small>F<small>oods</small>
+                        </h1>
                     </div>
+                    <HeaderCartButton />
                 </div>
             </div>
 

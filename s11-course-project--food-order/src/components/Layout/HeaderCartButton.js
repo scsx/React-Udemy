@@ -3,10 +3,11 @@ import CartIcon from '../Cart/CartIcon'
 
 const HeaderCartButton = () => {
     return (
-        <button className="btn">
+        <button className="btn cartbtn">
             <CartIcon />
+            <span>Your order</span>
             <div className="badge">
-                3
+                0.00 €
             </div>
         </button>
     )
