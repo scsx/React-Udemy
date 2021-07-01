@@ -1,13 +1,14 @@
 import React from 'react'
-import { Button, Badge } from 'antd'
-import { ShoppingCartOutlined } from '@ant-design/icons'
+import CartIcon from '../Cart/CartIcon'
 
 const HeaderCartButton = () => {
     return (
-        <Button icon={<ShoppingCartOutlined />}>
-            Your order
-            <Badge count='23' color='blue' />
-        </Button>
+        <button className="btn">
+            <CartIcon />
+            <div className="badge">
+                3
+            </div>
+        </button>
     )
 }
 
