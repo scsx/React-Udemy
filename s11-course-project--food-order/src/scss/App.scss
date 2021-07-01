@@ -3,10 +3,24 @@
 @import 'vars';
 
 * {
-  box-sizing: border-box;
-  font-family: 'Noto Sans JP', sans-serif;
+    box-sizing: border-box;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 body {
     background-color: white;
+}
+
+.container {
+    width: 100%;
+    max-width: 990px;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.carticon {
+    width: 1.35rem;
+    height: 1.35rem;
+    margin-right: 0.5rem;
 }
