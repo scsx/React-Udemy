@@ -1,16 +1,16 @@
 import './scss/App.scss'
 import Header from './components/Layout/Header'
-import MealsSummary from './components/Meals/MealsSummary'
-import AvailableMeals from './components/Meals/AvailableMeals'
+import Meals from './components/Meals/Meals'
 
 function App() {
     return (
         <div className='App'>
             <Header />
-            <div className='container'>
-                <MealsSummary />
-                <AvailableMeals />
-            </div>
+            <main>
+                <div className='container'>
+                    <Meals />
+                </div>
+            </main>
         </div>
     )
 }

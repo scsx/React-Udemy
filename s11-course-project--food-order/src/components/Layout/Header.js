@@ -15,7 +15,7 @@ const Header = (props) => {
                             </div>
                         </div> */}
                         <h1>
-                            M<small>y</small>F<small>oods</small>
+                            <span>M<small>y</small></span>F<small>oods</small>
                         </h1>
                     </div>
                     <HeaderCartButton />

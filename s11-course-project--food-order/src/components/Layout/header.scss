@@ -2,7 +2,50 @@
 
 .siteheader {
     .content {
-        background-color: $wine;
+        background-color: $darkblue;
+
+        h1 {
+            padding: 1rem;
+            margin: 0;
+            font-weight: 700;
+            line-height: 1;
+            color: white;
+            display: inline-block;
+            font-size: 2rem;
+            text-shadow: 2px 2px 12px darken($darkblue, 20%);
+
+            span {
+                color: gold;
+            }
+
+            small {
+                font-size: 75%;
+            }
+        }
+
+        .cartbtn {
+            padding: 1rem;
+            border-radius: 0;
+            color: white;
+            background-color: darken($darkblue, 10%);
+            transition: all .3s;
+
+            span {
+                font-size: 1rem;
+            }
+
+            .badge {
+                padding: 0 0 0 .5rem;
+                font-size: 1rem;
+                font-weight: 400;
+                top: 1px;
+                color: gold;
+            }
+
+            &:hover {
+                background-color: lighten($darkblue, 10%);
+            }
+        }
 
         .hamburger {
             display: inline-block;
@@ -36,37 +79,6 @@
                 }
             }
         }
-
-        h1 {
-            padding: 1rem;
-            margin: 0;
-            font-weight: 700;
-            line-height: 1;
-            color: white;
-            display: inline-block;
-
-            small {
-                font-size: 75%;
-            }
-        }
-
-        .cartbtn {
-            padding: 1rem;
-            border-radius: 0;
-            color: white;
-            background-color: lighten($wine, 10%);
-
-            span {
-                font-size: 1rem;
-            }
-
-            .badge {
-                padding: 0 0 0 .5rem;
-                font-size: 1rem;
-                font-weight: 400;
-                top: 1px;
-            }
-        }
     }
 
     .foodbck {
@@ -74,5 +86,6 @@
         background-position: bottom;
         background-repeat: no-repeat;
         background-size: cover;
+        box-shadow: inset 0 -10px 10px -10px #00000075;
     }
 }

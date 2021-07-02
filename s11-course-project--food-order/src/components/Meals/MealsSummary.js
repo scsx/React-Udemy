@@ -4,7 +4,7 @@ import './meals.scss'
 const MealsSummary = () => {
     return (
         <div className='summary'>
-            <h2 className='display-5 fw-bold'>MyFoods Philosophy</h2>
+            <h2 className='display-5 fw-bold'>MyFoods is your food</h2>
             <p className='lead'>
                 MyFoods has hundreds of meals to choose from. When you open the
                 app, you can scroll through for inspiration or search for a
