@@ -1,4 +1,5 @@
 import React from 'react'
+import MealItemForm from './MealItemForm'
 
 const MealItem = (props) => {
     const price = `${props.meal.price.toFixed(2)} €`
@@ -10,7 +11,9 @@ const MealItem = (props) => {
                     <p>{props.meal.description}</p>
                     <div className='price'>{price}</div>
                 </div>
-                <div className='col-3 alright'>form</div>
+                <div className='col-3 alright'>
+                    <MealItemForm />
+                </div>
             </div>
         </li>
     )
