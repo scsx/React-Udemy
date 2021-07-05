@@ -7,7 +7,7 @@ const DUMMY_MEALS = [
         id: 'm1',
         name: 'Combi Sushi Sashimi 2 pax',
         description:
-            'Combinado de 48 unids para 2 pessoas 4 unds uramaki 24 unds makimonio 6 nigiri 4 variedades de sashimi (atum,salmao.peixe manteiga, robalo)',
+            'Combinado de 48 unids para 2 pessoas 4 unds uramaki 24 unds makimonio 6 nigiri 4 variedades de sashimi (atum,salmão, peixe manteiga, robalo)',
         price: 28.9
     },
     {
@@ -26,14 +26,14 @@ const DUMMY_MEALS = [
     {
         id: 'm4',
         name: 'Panados Frango frito de amendoim',
-        description: '7un. Panados frango frito de amendoim',
+        description: '7un. Panados de frango frito com amendoim',
         price: 18.9
     },
     {
         id: 'm5',
         name: 'Salmão skin mix',
         description:
-            'Caixa de 5 unidades de nigiri salmão skin ,8unds de maki salmão skin',
+            'Caixa de 5un. de nigiri salmão skin , 8un. maki de salmão skin',
         price: 8.9
     }
 ]
