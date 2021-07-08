@@ -18,7 +18,7 @@ const Header = (props) => {
                             <span>M<small>y</small></span>F<small>oods</small>
                         </h1>
                     </div>
-                    <HeaderCartButton />
+                    <HeaderCartButton onClickToShowCart={props.onShowCart} />
                 </div>
             </div>
 

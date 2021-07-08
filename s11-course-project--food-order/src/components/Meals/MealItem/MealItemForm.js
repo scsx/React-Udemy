@@ -2,7 +2,6 @@ import React from 'react'
 import Input from '../../UI/Input'
 
 const MealItemForm = (props) => {
-    console.log(props)
     return (
         <form>
             <Input
