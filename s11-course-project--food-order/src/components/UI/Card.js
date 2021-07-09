@@ -1,7 +1,9 @@
 const Card = (props) => {
     return (
         <div className={`card ${props.className}`}>
-            {props.children}
+            <div className="card-body">
+                {props.children}
+            </div>
         </div>
     )
 }

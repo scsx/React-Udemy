@@ -16,7 +16,8 @@ const ModalOverlay = (props) => {
                     </div>
                     <div className='modal-body'>{props.children}</div>
                     <div className='modal-footer'>
-                        <button type='button' className='btn btn-secondary' onClick={props.onClickCloseModal}>
+                        <p>All items include VAT</p>
+                        <button type='button' className='btn btn-outline-dark' onClick={props.onClickCloseModal}>
                             Close
                         </button>
                     </div>

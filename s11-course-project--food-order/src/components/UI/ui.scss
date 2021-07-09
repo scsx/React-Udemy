@@ -1,3 +1,5 @@
+@import '../../scss/vars';
+
 .backdrop {
     position: fixed;
     top: 0;
@@ -11,7 +13,67 @@
 .modal {
     display: block;
 
-    .card {
+    .modal-header {
+        background-color: $bsblue;
+        color: white;
+        border-radius: 0;
+    }
+
+    .modal-content {
+        border-radius: 0;
         border: none;
     }
+
+    .modal-footer {
+        background-color: $egg;
+        padding: .5rem 1rem;
+    }
+
+    .card.cart {
+        border: none;
+
+        .list-group-item {
+            h4 {
+                font-size: 1.2rem;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+// Round Button
+.cssCircle {
+    -webkit-border-radius: 999px;
+    -moz-border-radius: 999px;
+    border-radius: 999px;
+
+    width: 30px;
+    height: 30px;
+    padding: 0px;
+
+    background: $bsblue;
+    color: white;
+    text-align: center;
+    transition: background 0.2s linear;
+    transition: color 0.2s linear;
+    font: 28px Arial, sans-serif;
+}
+
+.cssCircle:hover {
+    background: #3f69a0;
+    cursor: pointer;
+}
+
+.minusSign {
+    line-height: 0.9em;
+    margin-bottom: 1px;
+}
+
+.plusSign {
+    line-height: 1.1em;
+}
+
+.minusSign:hover,
+.plusSign:hover {
+    color: white;
 }

@@ -41,7 +41,7 @@
             border-radius: 0;
 
             h3 {
-                font-size: 1.05rem;
+                font-size: 1.25rem;
                 font-weight: 700;
             }
 
@@ -52,5 +52,12 @@
                 font-weight: 700;
             }
         }
+    }
+}
+
+.orderform {
+    input.form-control {
+        width: 3rem;
+        margin-right: 1rem;
     }
 }

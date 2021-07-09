@@ -1,17 +1,31 @@
+import { useContext } from 'react'
 import Modal from '../UI/Modal'
+import CartContext from '../../store/cart-context'
+import CartItem from './CartItem'
 
 const Cart = (props) => {
+    const cartCtx = useContext(CartContext)
+
+    const totalAmount = `${cartCtx.totalAmount.toFixed(2)}€`
+    const hasItems = cartCtx.items.length > 0
+
+    const cartItemAddHandler = (id) => {}
+
+    const cartItemRemoveHandler = (id) => {}
+
     const cartItems = (
-        <ul>
-            {[
-                {
-                    id: 'c1',
-                    name: 'Sushi',
-                    amount: 2,
-                    price: 12.99
-                }
-            ].map((item) => {
-                return <li key={item.id}>{item.name}</li>
+        <ul className='list-group'>
+            {cartCtx.items.map((item) => {
+                return (
+                    <CartItem
+                        key={item.id}
+                        name={item.name}
+                        amount={item.amount}
+                        price={item.price}
+                        onRemove={cartItemRemoveHandler}
+                        onAdd={cartItemAddHandler}
+                    />
+                )
             })}
         </ul>
     )
@@ -20,17 +34,22 @@ const Cart = (props) => {
         <Modal onClickClose={props.onCloseCart}>
             <div className='cart card'>
                 {cartItems}
-                <div className='card-body'>
-                    <h5 className='card-title'>Total amount</h5>
-                    <p className='card-text'>43.56</p>
-                    <div className='btn-group actions'>
-                        <button type='button' className='btn btn-primary' onClick={props.onCloseCart}>
-                            Close
+                <table className='table my-4'>
+                    <tbody>
+                        <tr>
+                            <td>Total amount</td>
+                            <td className='alright'>
+                                <b>{totalAmount}</b>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div className='btn-group actions'>
+                    {hasItems && (
+                        <button type='button' className='btn btn-success'>
+                            Place Order
                         </button>
-                        <button type='button' className='btn btn-primary'>
-                            Order
-                        </button>
-                    </div>
+                    )}
                 </div>
             </div>
         </Modal>

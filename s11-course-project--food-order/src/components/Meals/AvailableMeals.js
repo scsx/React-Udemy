@@ -7,7 +7,7 @@ const DUMMY_MEALS = [
         id: 'm1',
         name: 'Combi Sushi Sashimi 2 pax',
         description:
-            'Combinado de 48 unids para 2 pessoas 4 unds uramaki 24 unds makimonio 6 nigiri 4 variedades de sashimi (atum,salmão, peixe manteiga, robalo)',
+            'Combinado de 48 unids para 2 pessoas 4 unds uramaki 24 unds makimonio 6 nigiri 4 variedades de sashimi (atum, salmão, peixe manteiga, robalo)',
         price: 28.9
     },
     {
@@ -26,7 +26,7 @@ const DUMMY_MEALS = [
     {
         id: 'm4',
         name: 'Panados Frango frito de amendoim',
-        description: '7un. Panados de frango frito com amendoim',
+        description: '7un. panados de frango frito com amendoim',
         price: 18.9
     },
     {
@@ -40,7 +40,8 @@ const DUMMY_MEALS = [
 
 const AvailableMeals = () => {
     const mealsList = DUMMY_MEALS.map((meal) => {
-        return <MealItem key={meal.id} meal={meal} />
+        //return <MealItem key={meal.id} id={meal.id} meal={meal} />
+        return <MealItem key={meal.id} id={meal.id} meal={meal} name={meal.name} description={meal.description} price={meal.price} />
     })
     return (
         <Card className='mealscard'>
