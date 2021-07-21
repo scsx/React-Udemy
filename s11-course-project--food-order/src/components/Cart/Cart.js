@@ -6,12 +6,18 @@ import CartItem from './CartItem'
 const Cart = (props) => {
     const cartCtx = useContext(CartContext)
 
-    const totalAmount = `${cartCtx.totalAmount.toFixed(2)}€`
+    console.log(cartCtx.items)
+
+    const totalAmount = `${Math.max(cartCtx.totalAmount, 0).toFixed(2)}€`
     const hasItems = cartCtx.items.length > 0
 
-    const cartItemAddHandler = (id) => {}
+    const cartItemAddHandler = (item) => {
+        cartCtx.addItem({ ...item, amount: 1 })
+    }
 
-    const cartItemRemoveHandler = (id) => {}
+    const cartItemRemoveHandler = (id) => {
+        cartCtx.removeItem(id)
+    }
 
     const cartItems = (
         <ul className='list-group'>
@@ -22,8 +28,8 @@ const Cart = (props) => {
                         name={item.name}
                         amount={item.amount}
                         price={item.price}
-                        onRemove={cartItemRemoveHandler}
-                        onAdd={cartItemAddHandler}
+                        onRemove={cartItemRemoveHandler.bind(null, item.id)}
+                        onAdd={cartItemAddHandler.bind(null, item)}
                     />
                 )
             })}
@@ -34,16 +40,18 @@ const Cart = (props) => {
         <Modal onClickClose={props.onCloseCart}>
             <div className='cart card'>
                 {cartItems}
-                <table className='table my-4'>
-                    <tbody>
-                        <tr>
-                            <td>Total amount</td>
-                            <td className='alright'>
-                                <b>{totalAmount}</b>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                {hasItems ? (
+                    <table className='table my-4'>
+                        <tbody>
+                            <tr>
+                                <td>Total amount</td>
+                                <td className='alright'>
+                                    <b>{totalAmount}</b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                ) : <h2 className='noitems'>Please add some food!</h2>}
                 <div className='btn-group actions'>
                     {hasItems && (
                         <button type='button' className='btn btn-success'>

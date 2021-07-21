@@ -33,6 +33,10 @@
     border-radius: 0;
     margin-bottom: 3rem;
 
+    .card-body {
+        padding: 0;
+    }
+
     .mealslist {
         border: 2px solid darken($egg, 30%);
         border-radius: 0;
@@ -46,8 +50,8 @@
             }
 
             .price {
-                margin-top: -.75rem;
-                margin-bottom: .5rem;
+                margin-top: -0.75rem;
+                margin-bottom: 0.5rem;
                 color: $darkblue;
                 font-weight: 700;
             }
