@@ -9,13 +9,11 @@ const Header = (props) => {
             <div className='content'>
                 <div className='d-flex'>
                     <div className='flex-grow-1'>
-                        {/* <div className="hamburger">
-                            <div className="center">
-                                <div></div>
-                            </div>
-                        </div> */}
                         <h1>
-                            <span>M<small>y</small></span>F<small>oods</small>
+                            <span>
+                                M<small>y</small>
+                            </span>
+                            F<small>oods</small>
                         </h1>
                     </div>
                     <HeaderCartButton onClickToShowCart={props.onShowCart} />
