@@ -6,18 +6,17 @@ const Notes = () => {
     const [notes, setNotes] = useState([])
     const addNote = useCallback(() => {
         console.log('NOTES: Note added ')
-        const newNote = 'random'
+        const newNote = 'random '
         setNotes((n) => [...n, newNote])
     }, [setNotes])
 
     return (
         <div className='notes'>
             <h3>Notes</h3>
-            {notes.map((note, index) => (
-                <p key={index}>{note}</p>
-            ))}
-
             <NewNote newnote={addNote} />
+            {notes.map((note, index) => (
+                <b key={index}>{note}</b>
+            ))}
         </div>
     )
 }

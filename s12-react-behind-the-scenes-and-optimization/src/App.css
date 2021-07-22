@@ -1,6 +1,6 @@
 .app {
     margin: 3rem auto;
-    width: 30rem;
+    width: 90%;
     padding: 1rem;
     background: white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
@@ -14,4 +14,13 @@
 
 .app .btn {
     margin: 10px auto;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    display: inline;
+    margin-right: 20px;
 }
