@@ -1,0 +1,38 @@
+main {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100vh;
+    height: -webkit-fill-available;
+    max-height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+    background-color: #3c4146;
+}
+
+.sidebar {
+    width: 25%;
+}
+
+.movies {
+    width: 75%;
+}
+
+.movies .album {
+    padding: 1rem;
+    overflow: auto;
+}
+
+.movietitle h2 {
+    line-height: 1.1;
+    font-weight: 700;
+    color: #425466;
+}
+
+.movietitle h5 {
+    color: #A58500;
+}
+
+.movietitle p.card-text {
+    max-height: 150px;
+    overflow: hidden;
+}
