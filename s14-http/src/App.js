@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import './App.css'
 import MoviesList from './components/MoviesList'
 
@@ -11,7 +11,7 @@ function App() {
         return `${theString.split('.')[1]}.`
     }
 
-    async function fetchMoviesHandler() {
+    const fetchMoviesHandler = useCallback(async () => {
         setIsLoading(true)
         setError(null)
         try {
@@ -38,14 +38,18 @@ function App() {
             setError(error.message)
         }
         setIsLoading(false)
-    }
+    }, [])
+
+    useEffect(() => {
+        fetchMoviesHandler()
+    }, [])
 
     let content = (
-            <div className='alert alert-secondary' role='alert'>
-                <h3>Found no movies</h3>
-                <p>Did you hit "fetch movies"?</p>
-            </div>
-        )
+        <div className='alert alert-secondary' role='alert'>
+            <h3>Found no movies</h3>
+            <p>Did you hit "fetch movies"?</p>
+        </div>
+    )
     if (movies.length > 0) {
         content = <MoviesList movies={movies} />
     }
