@@ -15,7 +15,7 @@ const Movie = (props) => {
                             className='btn btn-sm btn-outline-secondary'>
                             Watch movie
                         </button>
-                        <small className='text-muted'>9 dollars</small>
+                        <small className='text-muted'>episode {props.episode}</small>
                     </div>
                 </div>
             </div>

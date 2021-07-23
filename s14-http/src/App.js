@@ -1,32 +1,37 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import './App.css'
 import MoviesList from './components/MoviesList'
 
 function App() {
     const [movies, setMovies] = useState([])
-    const fetchMoviesHandler = () => {
-        fetch('https://swapi.dev/api/films/').then(response => {
-            return response.json()
-        }).then(data => {
-            const transformedData = data.results.map(mov => {
-                return {
-                    id: mov.episode_id,
-                    title: mov.title,
-                    openingText: mov.opening_crawl,
-                    releaseDate: mov.release_date
-                }
-            })
-            setMovies(transformedData)
-            console.log(data.results)
+    async function fetchMoviesHandler() {
+        const response = await fetch('https://swapi.dev/api/films/')
+        const data = await response.json()
+        const transformedData = data.results.map((mov) => {
+            return {
+                id: mov.episode_id,
+                title: mov.title,
+                openingText: trimText(mov.opening_crawl),
+                releaseDate: mov.release_date,
+                episode: mov.episode_id
+            }
         })
+        setMovies(transformedData)
     }
-    // 
+
+    const trimText = (theString) => {
+        return `${theString.split('.')[1]}.`
+    }
 
     return (
         <main>
             <div className='sidebar d-flex flex-column flex-shrink-0 p-3 text-white bg-dark'>
-                <span className='fs-4'>Movie DB</span>
-                <button className='btn btn-primary mt-4' onClick={fetchMoviesHandler}>Fetch Movies</button>
+                <h1 className='fs-4'>Movie DB</h1>
+                <button
+                    className='btn btn-primary mt-4'
+                    onClick={fetchMoviesHandler}>
+                    Fetch Movies
+                </button>
             </div>
             <section className='movies d-flex flex-column'>
                 <MoviesList movies={movies} />

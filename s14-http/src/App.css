@@ -4,22 +4,19 @@ main {
     height: 100vh;
     height: -webkit-fill-available;
     max-height: 100vh;
-    overflow-x: auto;
-    overflow-y: hidden;
-    background-color: #3c4146;
+    overflow-y: auto;
 }
 
 .sidebar {
-    width: 25%;
+    width: 20%;
 }
 
 .movies {
-    width: 75%;
+    width: 80%;
 }
 
 .movies .album {
     padding: 1rem;
-    overflow: auto;
 }
 
 .movietitle h2 {
@@ -31,8 +28,9 @@ main {
 .movietitle h5 {
     color: #A58500;
 }
-
+/*
 .movietitle p.card-text {
     max-height: 150px;
     overflow: hidden;
 }
+*/
