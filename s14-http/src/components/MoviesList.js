@@ -13,6 +13,7 @@ const MovieList = (props) => {
                             releaseDate={movie.releaseDate}
                             openingText={movie.openingText}
                             episode={movie.episode}
+                            producer={movie.producer}
                         />
                     ))}
                 </div>

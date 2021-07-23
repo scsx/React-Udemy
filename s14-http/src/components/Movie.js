@@ -9,13 +9,18 @@ const Movie = (props) => {
                     <h5>{props.releaseDate}</h5>
                     <hr />
                     <p className='card-text'>{props.openingText}</p>
+                    <p>
+                        <small className='text-muted'>{props.producer}</small>
+                    </p>
                     <div className='d-flex justify-content-between align-items-center'>
                         <button
                             type='button'
                             className='btn btn-sm btn-outline-secondary'>
                             Watch movie
                         </button>
-                        <small className='text-muted'>episode {props.episode}</small>
+                        <small className='text-muted'>
+                            episode {props.episode}
+                        </small>
                     </div>
                 </div>
             </div>
