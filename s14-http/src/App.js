@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import './App.css'
 import MoviesList from './components/MoviesList'
+import AddMovie from './components/AddMovie'
 
 function App() {
     const [movies, setMovies] = useState([])
@@ -69,6 +70,10 @@ function App() {
         )
     }
 
+    function addMovieHandler(movie) {
+        console.log(movie)
+    }
+
     return (
         <main>
             <div className='sidebar d-flex flex-column flex-shrink-0 p-3 text-white bg-dark'>
@@ -78,6 +83,9 @@ function App() {
                     onClick={fetchMoviesHandler}>
                     Fetch Movies
                 </button>
+                <div className='movieform'>
+                    <AddMovie onAddMovie={addMovieHandler} />
+                </div>
             </div>
             <section className='movies d-flex flex-column'>{content}</section>
         </main>

@@ -57,3 +57,7 @@ main {
     width: calc(100% - 4rem);
     margin: 2rem;
 }
+
+.movieform, .movieform .form-label, .movieform .btn {
+    margin-top: .75rem;
+}
