@@ -47,7 +47,17 @@ function AddMovie(props) {
                 id='date'
                 ref={releaseDateRef}
             />
-            <button className='btn btn-primary'>Add Movie</button>
+            <div className='btn-group mt-3'>
+                <button type='submit' className='btn btn-success btn-sm'>
+                    Add movie
+                </button>
+                <button
+                    type='button'
+                    className='btn btn-primary btn-sm'
+                    onClick={props.onGetMovies}>
+                    Get movies
+                </button>
+            </div>
         </form>
     )
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import './App.css'
 import MoviesList from './components/MoviesList'
-import AddMovie from './components/AddMovie'
+import FirebaseMovies from './components/FirebaseMovies'
 
 function App() {
     const [movies, setMovies] = useState([])
@@ -43,7 +43,7 @@ function App() {
 
     useEffect(() => {
         fetchMoviesHandler()
-    }, [])
+    }, [fetchMoviesHandler])
 
     let content = (
         <div className='alert alert-secondary' role='alert'>
@@ -70,22 +70,16 @@ function App() {
         )
     }
 
-    function addMovieHandler(movie) {
-        console.log(movie)
-    }
-
     return (
         <main>
-            <div className='sidebar d-flex flex-column flex-shrink-0 p-3 text-white bg-dark'>
+            <div className='sidebar d-flex flex-column flex-shrink-0 p-3 bg-dark'>
                 <h1 className='fs-4'>Movie DB</h1>
                 <button
-                    className='btn btn-primary mt-4'
+                    className='btn btn-primary mt-2'
                     onClick={fetchMoviesHandler}>
-                    Fetch Movies
+                    Fetch API Movies
                 </button>
-                <div className='movieform'>
-                    <AddMovie onAddMovie={addMovieHandler} />
-                </div>
+                <FirebaseMovies />
             </div>
             <section className='movies d-flex flex-column'>{content}</section>
         </main>

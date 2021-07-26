@@ -8,7 +8,7 @@ main {
 }
 
 .sidebar {
-    width: 20%;
+    width: 25%;
 }
 
 .sidebar h1 {
@@ -16,7 +16,7 @@ main {
 }
 
 .movies {
-    width: 80%;
+    width: 75%;
 }
 
 .movies .album {
@@ -53,11 +53,47 @@ main {
     opacity: .3;
 }
 
-.alert {
+.movies .alert {
     width: calc(100% - 4rem);
     margin: 2rem;
 }
 
-.movieform, .movieform .form-label, .movieform .btn {
-    margin-top: .75rem;
+.card.bg-secondary {
+    background-color: #323f4c !important;
+}
+
+.card .card-title {
+    font-family: 'Encode Sans SC', sans-serif;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: goldenrod;
+}
+
+.movieform .form-control {
+    font-size: .75rem;
+}
+
+.movieform .form-label {
+    margin-top: .5rem;
+}
+
+.movieform .form-label {
+    margin-bottom: .25rem;
+}
+
+.fbmoviesresults {
+    margin-top: 1rem;
+}
+
+.fbmoviesresults h5 {
+    font-family: 'Encode Sans SC', sans-serif;
+}
+
+.firemov h6 {
+    font-size: 1rem;
+    font-family: 'Encode Sans SC', sans-serif;
+}
+
+.firemov p {
+    font-size: .75rem;
 }
