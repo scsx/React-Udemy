@@ -4,5 +4,5 @@ https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/2
 - First example is a simple counter
 - Second example will get/post http data through a custom hook
 
-### Preview
-![alt text](http-preview.png)
+### Preview Ex 2
+![alt text](preview.png)
