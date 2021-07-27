@@ -1,7 +1,5 @@
 import { useRef } from 'react'
 
-import classes from './TaskForm.module.css'
-
 const TaskForm = (props) => {
     const taskInputRef = useRef()
 
@@ -16,9 +14,18 @@ const TaskForm = (props) => {
     }
 
     return (
-        <form className={classes.form} onSubmit={submitHandler}>
-            <input type='text' ref={taskInputRef} />
-            <button>{props.loading ? 'Sending...' : 'Add Task'}</button>
+        <form className='form' onSubmit={submitHandler}>
+            <div className='input-group mb-3 input-group-lg'>
+                <input
+                    type='text'
+                    className='form-control'
+                    ref={taskInputRef}
+                    placeholder="Task name"
+                />
+                <button className='btn btn-success' type='submit'>
+                    {props.loading ? 'Sending...' : 'Add Task'}
+                </button>
+            </div>
         </form>
     )
 }

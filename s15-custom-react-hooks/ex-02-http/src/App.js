@@ -1,49 +1,42 @@
 import React, { useEffect, useState } from 'react'
 import Tasks from './components/Tasks/Tasks'
 import NewTask from './components/NewTask/NewTask'
+import useHttpHook from './hooks/use-http'
 
 function App() {
-    const [isLoading, setIsLoading] = useState(false)
-    const [error, setError] = useState(null)
     const [tasks, setTasks] = useState([])
 
-    const fetchTasks = async (taskText) => {
-        setIsLoading(true)
-        setError(null)
-        try {
-            const response = await fetch(
-                'https://react-udemy-http-1fbf3-default-rtdb.europe-west1.firebasedatabase.app/tasks.json'
-            )
-
-            if (!response.ok) {
-                throw new Error('Request failed!')
-            }
-
-            const data = await response.json()
-
-            const loadedTasks = []
-
-            for (const taskKey in data) {
-                loadedTasks.push({ id: taskKey, text: data[taskKey].text })
-            }
-
-            setTasks(loadedTasks)
-        } catch (err) {
-            setError(err.message || 'Something went wrong!')
-        }
-        setIsLoading(false)
-    }
+    // Destructuring what we expect to be returned from the custom hook so we can use here:
+    const {
+        isLoading,
+        error,
+        sendRequest: fetchTasks // Destructuring alias
+    } = useHttpHook()
 
     useEffect(() => {
-        fetchTasks()
-    }, [])
+        // Function to pass to the custom hook (named 'applyData' there) to work the data received
+        const transformTasks = (tasksObj) => {
+            const loadedTasks = []
+            for (const taskKey in tasksObj) {
+                loadedTasks.push({ id: taskKey, text: tasksObj[taskKey].text })
+            }
+            setTasks(loadedTasks)
+        }
+        fetchTasks(
+            {
+                url: 'https://react-udemy-http-1fbf3-default-rtdb.europe-west1.firebasedatabase.app/tasks.json'
+            },
+            transformTasks
+        )
+    }, [fetchTasks])
 
     const taskAddHandler = (task) => {
         setTasks((prevTasks) => prevTasks.concat(task))
     }
 
     return (
-        <React.Fragment>
+        <div className='container py-5'>
+            <h1 className='text-white mb-3 text-center'>Tasks</h1>
             <NewTask onAddTask={taskAddHandler} />
             <Tasks
                 items={tasks}
@@ -51,7 +44,7 @@ function App() {
                 error={error}
                 onFetch={fetchTasks}
             />
-        </React.Fragment>
+        </div>
     )
 }
 
