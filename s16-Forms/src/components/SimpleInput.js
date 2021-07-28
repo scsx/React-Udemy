@@ -32,11 +32,12 @@ const SimpleInput = (props) => {
 
     return (
         <form onSubmit={formSubmissionHandler}>
+            <h2>Anything</h2>
             <div className='input-group input-group-lg mb-3'>
                 <input
                     type='text'
                     className={nameInputClasses}
-                    placeholder='name'
+                    placeholder='write anything'
                     id='name'
                     onChange={nameInputChangeHandler}
                     onBlur={nameInputBlurHandler}
