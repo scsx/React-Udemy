@@ -26,6 +26,13 @@ h1 {
     font-weight: 800;
 }
 
+.btn-primary.disabled,
+.btn-primary:disabled {
+    color: #fff;
+    background-color: #66606b;
+    border-color: #66606b;
+}
+
 .form-control.is-invalid,
 .was-validated .form-control:invalid {
     background-color: #f8c7eb;
