@@ -70,21 +70,3 @@ h2 {
 .form-actions .btn {
     margin-top: 1rem;
 }
-
-.unit.radios {
-    margin-top: .75rem;
-}
-
-.unit.radios.is-invalid {
-    background-color: #ec38bc;
-}
-
-.unit.radios .form-check-inline {
-    margin-right: 1rem;
-}
-
-.unit.radios .form-check-inline label {
-    margin: 0 .5rem 0 0;
-    text-transform: uppercase;
-    font-size: .85rem;
-}
