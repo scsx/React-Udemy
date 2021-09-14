@@ -2,6 +2,7 @@ import React from 'react'
 import Card from '../UI/Card'
 import MealItem from './MealItem/MealItem'
 
+// Meals will be moved to DB
 const DUMMY_MEALS = [
     {
         id: 'm1',
