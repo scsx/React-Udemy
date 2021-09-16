@@ -1,48 +1,73 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Card from '../UI/Card'
 import MealItem from './MealItem/MealItem'
 
-// Meals will be moved to DB
-const DUMMY_MEALS = [
-    {
-        id: 'm1',
-        name: 'Combi Sushi Sashimi 2 pax',
-        description:
-            'Combinado de 48 unids para 2 pessoas 4 unds uramaki 24 unds makimonio 6 nigiri 4 variedades de sashimi (atum, salmão, peixe manteiga, robalo)',
-        price: 28.9
-    },
-    {
-        id: 'm2',
-        name: 'Sashimi Misto',
-        description: 'Caixa de 22 unidades.',
-        price: 9.9
-    },
-    {
-        id: 'm3',
-        name: 'Maki misto frito doce',
-        description:
-            '15un. Maki misto frito (amendoim com molho de morango e chocolate)',
-        price: 8.9
-    },
-    {
-        id: 'm4',
-        name: 'Panados Frango frito de amendoim',
-        description: '7un. panados de frango frito com amendoim',
-        price: 18.9
-    },
-    {
-        id: 'm5',
-        name: 'Salmão skin mix',
-        description:
-            'Caixa de 5un. de nigiri salmão skin , 8un. maki de salmão skin',
-        price: 8.9
-    }
-]
-
 const AvailableMeals = () => {
-    const mealsList = DUMMY_MEALS.map((meal) => {
-        //return <MealItem key={meal.id} id={meal.id} meal={meal} />
-        return <MealItem key={meal.id} id={meal.id} meal={meal} name={meal.name} description={meal.description} price={meal.price} />
+    const [meals, setMeals] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
+    const [httpError, setHttpError] = useState()
+
+    useEffect(() => {
+        // This is a const because useEffect can't be async
+        const fetchMeals = async () => {
+            const response = await fetch(
+                'https://react-udemy-courseproject-default-rtdb.europe-west1.firebasedatabase.app/meals.json'
+            )
+
+            if (!response.ok) {
+                console.log(response)
+                throw new Error('Something went wrong')
+            }
+
+            const responseData = await response.json()
+            const loadedMeals = []
+            for (const key in responseData) {
+                loadedMeals.push({
+                    id: key,
+                    name: responseData[key].name,
+                    description: responseData[key].description,
+                    price: responseData[key].price
+                })
+            }
+
+            setMeals(loadedMeals)
+            setIsLoading(false)
+        }
+
+        fetchMeals().catch((error) => {
+            console.log(error)
+            setIsLoading(false)
+            setHttpError(error.message)
+        })
+    }, [])
+
+    if (isLoading) {
+        return (
+            <Card className='nomeals'>
+                <h5>Loading...</h5>
+            </Card>
+        )
+    }
+
+    if (httpError) {
+        return (
+            <Card className='nomeals error'>
+                <h5>{httpError}</h5>
+            </Card>
+        )
+    }
+
+    const mealsList = meals.map((meal) => {
+        return (
+            <MealItem
+                key={meal.id}
+                id={meal.id}
+                meal={meal}
+                name={meal.name}
+                description={meal.description}
+                price={meal.price}
+            />
+        )
     })
     return (
         <Card className='mealscard'>

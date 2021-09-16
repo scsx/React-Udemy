@@ -15,12 +15,14 @@ const ModalOverlay = (props) => {
                         <button type='button' className='btn-close' onClick={props.onClickCloseModal}></button>
                     </div>
                     <div className='modal-body'>{props.children}</div>
+                    {/*
                     <div className='modal-footer'>
                         <p>All items include VAT</p>
-                        <button type='button' className='btn btn-outline-dark' onClick={props.onClickCloseModal}>
+                        <button type='button' className='btn btn-sm btn-outline-dark' onClick={props.onClickCloseModal}>
                             Close
                         </button>
                     </div>
+                    */}
                 </div>
             </div>
         </div>

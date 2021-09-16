@@ -9,14 +9,13 @@ const MealItemForm = (props) => {
         event.preventDefault()
         const enteredAmount = amountInputRef.current.value
         const enteredAmountAsNumber = +enteredAmount
-        
+
         if (
             enteredAmount.trim().length === 0 ||
             enteredAmountAsNumber < 1 ||
             enteredAmountAsNumber > 5
         ) {
             setAmountIsValid(false)
-            console.log('I failed')
             return
         }
         props.onAddToCart(enteredAmountAsNumber)
@@ -29,7 +28,7 @@ const MealItemForm = (props) => {
                 onSubmit={submitHandler}>
                 <Input
                     ref={amountInputRef}
-                    label='Amount'
+                    label=''
                     input={{
                         id: props.id,
                         type: 'number',
@@ -40,13 +39,16 @@ const MealItemForm = (props) => {
                         className: 'form-control'
                     }}
                 />
-                <button type='submit' className='btn btn-primary'>
-                    Add
+                <button type='submit' className='btn btn-secondary'>
+                    + Add
                 </button>
-                {/* <div className='cssCircle plusSign'>&#43;</div> */}
             </form>
-            
-            {!amountIsValid && <p class="fw-bold mt-3 lh-sm">Please enter an amount between 1 and 5</p>}
+
+            {!amountIsValid && (
+                <p className='fw-bold mt-3 lh-sm'>
+                    Please enter an amount between 1 and 5
+                </p>
+            )}
         </>
     )
 }

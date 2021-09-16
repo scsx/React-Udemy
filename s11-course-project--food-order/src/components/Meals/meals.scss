@@ -28,6 +28,21 @@
     }
 }
 
+.nomeals {
+    padding: 1.7rem 0;
+
+    h5 {
+        margin: 0;
+        text-align: center;
+    }
+
+    &.error {
+        h5 {
+            color: red;
+        }
+    }
+}
+
 .card.mealscard {
     background-color: transparent;
     border-radius: 0;
@@ -38,15 +53,18 @@
     }
 
     .mealslist {
-        border: 2px solid darken($egg, 30%);
         border-radius: 0;
 
         .list-group-item {
             border-radius: 0;
 
             h3 {
-                font-size: 1.25rem;
+                font-size: 1.5rem;
                 font-weight: 700;
+            }
+
+            p {
+                font-size: .85rem;
             }
 
             .price {
@@ -60,8 +78,15 @@
 }
 
 .orderform {
+    margin-top: 2rem;
+
     input.form-control {
-        width: 3rem;
-        margin-right: 1rem;
+        width: 4rem;
+        margin-right: -3px;
+    }
+
+    .btn {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
     }
 }

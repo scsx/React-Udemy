@@ -1,13 +1,36 @@
+@import '../../scss/vars';
+
 .impulsivebuy {
     .btn {
         height: 30px;
         width: 30px;
         margin-top: 1rem;
-        margin-left: .5rem;
+        margin-left: 0.5rem;
         border-radius: 30rem;
         font-size: 1rem;
-        line-height: .9;
+        line-height: 0.9;
         font-weight: 700;
         padding-top: 0.15rem;
+    }
+}
+
+.detailsform {
+    background-color: $egglight;
+    border: 1px solid $egg;
+    padding: 1rem;
+
+    .form-label {
+        margin-bottom: 0.25rem;
+        font-size: 0.75rem;
+    }
+
+    h5 {
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .invalid-feedback {
+        display: block;
     }
 }

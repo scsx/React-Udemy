@@ -27,6 +27,10 @@
     .modal-footer {
         background-color: $egg;
         padding: .5rem 1rem;
+
+        p {
+            font-size: .75rem;
+        }
     }
 
     .card.cart {
