@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -5,11 +7,34 @@
 body {
     font-family: sans-serif;
     margin: 0;
-    background-color: #e7f8f8;
+    background: #e9e19f;
+}
+
+.cinzel {
+    font-family: 'Cinzel', sans-serif;
 }
 
 h1 {
     margin: 2rem 0;
+}
+
+.btn {
+    white-space: nowrap;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #008080;
+    border-color: #008080;
+}
+
+.btn-info:hover {
+    color: #fff;
+}
+
+.nav a {
+    font-size: 1rem;
+    text-transform: uppercase;
 }
 
 .centered {
@@ -41,4 +66,60 @@ h1 {
 .btn--flat:active {
     background-color: teal;
     color: white;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li {
+    margin-left: 1.5rem;
+    font-size: 1.25rem;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #88dfdf;
+}
+
+.nav a:hover,
+.nav a:active,
+.nav a.active {
+    color: #e6fcfc;
+}
+
+.form-group label {
+    font-weight: 500;
+    display: block;
+    margin-bottom: .5rem;
+    font-size: 1.25rem;
+    color: #1c5d5d;
+    font-family: 'Cinzel';
+}
+
+.form-group input,
+.form-group textarea {
+    margin-bottom: 1rem;
+}
+
+.newquote {
+    max-width: 50vw;
+    margin: 0 auto;
+}
+
+.newquote>div {
+    background-color: #f2f1e2;
+}
+
+.noquotes h2 {
+    font-size: 4rem;
+    font-family: 'Cinzel';
+    color: cornflowerblue;
+}
+.noquotes p {
+    font-style: italic;
+    color: #777;
 }
