@@ -1,7 +1,6 @@
 .form {
     margin-top: 1rem;
     position: relative;
-    text-align: center;
 }
 
 .loading {
@@ -19,9 +18,10 @@
 }
 
 .control label {
-    font-weight: bold;
     display: block;
     margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 .control textarea {

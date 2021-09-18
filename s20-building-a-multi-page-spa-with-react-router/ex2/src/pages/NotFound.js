@@ -1,5 +1,3 @@
-import { useParams, Route } from 'react-router-dom'
-
 const NotFound = () => {
     return (
             <div className='noquotes'>

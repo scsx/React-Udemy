@@ -21,7 +21,7 @@
 .item blockquote {
     margin: 0;
     text-align: left;
-    color: #1c5d5d;
+    color: #083131;
 }
 
 .item p {
@@ -32,5 +32,5 @@
 }
 
 .item figcaption {
-    color: #566d6d;
+    color: #999;
 }

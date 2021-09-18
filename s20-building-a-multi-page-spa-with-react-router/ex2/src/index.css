@@ -8,6 +8,7 @@ body {
     font-family: sans-serif;
     margin: 0;
     background: #e9e19f;
+    background-image: url(/src/img/patt.jpg);
 }
 
 .cinzel {
@@ -30,6 +31,22 @@ h1 {
 
 .btn-info:hover {
     color: #fff;
+}
+
+.btn-outline-info {
+    color: #008080;
+    border-color: #008080;
+}
+
+.btn-outline-info:hover {
+    background-color: #008080;
+    color: #fff;
+    border-color: #008080;
+}
+
+.btn.ascdesc span {
+    letter-spacing: -2px;
+    margin-right: 4px;
 }
 
 .nav a {
@@ -119,7 +136,35 @@ h1 {
     font-family: 'Cinzel';
     color: cornflowerblue;
 }
+
+.noquotes {
+    height: 20rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .noquotes p {
+    color: #262c2c;
+    font-size: 3rem;
+    font-weight: bold;
+    font-style: italic;
+    color: #777;
+}
+
+.comments {
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin: 1rem auto;
+    max-width: 60rem;
+}
+
+.list-group-item {
     font-style: italic;
     color: #777;
 }
