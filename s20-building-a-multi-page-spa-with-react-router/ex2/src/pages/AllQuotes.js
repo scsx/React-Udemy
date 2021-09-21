@@ -1,30 +1,46 @@
+import { useEffect } from 'react'
 import QuoteList from '../components/quotes/QuoteList'
-
-const DUMMY_QUOTES = [
-    {
-        id: 'q1',
-        author: 'Medina Carreira',
-        text: 'Enquanto não vir gente capaz de tomar conta deste país, sou incómodo.'
-    },
-    {
-        id: 'q2',
-        author: 'Millôr Fernandes',
-        text: 'Chato - Indivíduo que tem mais interesse em nós do que nós temos nele.'
-    },
-    {
-        id: 'q3',
-        author: 'Medina Carreira',
-        text: 'Portugal é o país dos achadores. Toda a gente acha. Liga-se a televisão e ouve-se toda a gente a achar.'
-    },
-    {
-        id: 'q4',
-        author: 'Millôr Fernandes',
-        text: 'Democracia é quando eu mando em você, ditadura é quando você manda em mim.'
-    }
-]
+import LoadingSpinner from '../components/UI/LoadingSpinner'
+import NoQuotesFound from '../components/quotes/NoQuotesFound'
+import useHttp from '../hooks/use-http'
+import { getAllQuotes } from '../lib/api'
 
 const AllQuotes = () => {
-    return <QuoteList quotes={DUMMY_QUOTES}/>
+    const {
+        sendRequest,
+        status,
+        data: loadedQuotes,
+        error
+    } = useHttp(getAllQuotes, true)
+
+    useEffect(() => {
+        sendRequest()
+    }, [sendRequest])
+
+    if (status === 'pending') {
+        return (
+            <div className='loadingquotes'>
+                <LoadingSpinner />
+            </div>
+        )
+    }
+
+    if (error) {
+        return (
+            <div className='alert alert-danger' role='alert'>
+                <h1 className='mt-0 mb-2 cinzel'>{error}</h1>Check your URL
+            </div>
+        )
+    }
+
+    if (
+        status === 'completed' &&
+        (!loadedQuotes || loadedQuotes.length === 0)
+    ) {
+        return <NoQuotesFound />
+    }
+
+    return <QuoteList quotes={loadedQuotes} />
 }
 
 export default AllQuotes
