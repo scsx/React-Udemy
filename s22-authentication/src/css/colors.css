@@ -1,0 +1,59 @@
+.bblack {
+    background-color: #0b0c10;
+}
+
+.cblack {
+    color: #0b0c10;
+}
+
+.bgrey {
+    background-color: #1f2833;
+}
+
+.cgrey {
+    color: #1f2833;
+}
+
+.begg {
+    background-color: #c5c6c7;
+}
+
+.cegg {
+    color: #c5c6c7;
+}
+
+.bblue {
+    background-color: #66fcf1;
+}
+
+.cblue {
+    color: #66fcf1;
+}
+
+.bgreen {
+    background-color: #45a29e;
+}
+
+.cgreen {
+    color: #45a29e;
+}
+
+.btn.btn-primary {
+    background-color: #66fcf1;
+    color: #fff;
+}
+
+.btn.btn-primary:hover {
+    background-color: #66fcf1;
+    color: #1f2833;
+}
+
+.btn.btn-outline-primary {
+    border-color: #66fcf1;
+    color: #fff;
+}
+
+.btn.btn-outline-primary:hover {
+    background-color: #66fcf1;
+    color: #1f2833;
+}

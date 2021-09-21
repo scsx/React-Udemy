@@ -1,5 +1,5 @@
 import { useState } from 'react'
-
+import { ButtonGroup, Button } from 'react-bootstrap'
 import classes from './AuthForm.module.css'
 
 const AuthForm = () => {
@@ -10,7 +10,7 @@ const AuthForm = () => {
     }
 
     return (
-        <section className={classes.auth}>
+        <section className='authlogin begg cgrey'>
             <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
             <form>
                 <div className={classes.control}>
@@ -22,15 +22,18 @@ const AuthForm = () => {
                     <input type='password' id='password' required />
                 </div>
                 <div className={classes.actions}>
-                    <button>{isLogin ? 'Login' : 'Create Account'}</button>
-                    <button
-                        type='button'
-                        className={classes.toggle}
-                        onClick={switchAuthModeHandler}>
-                        {isLogin
-                            ? 'Create new account'
-                            : 'Login with existing account'}
-                    </button>
+                    <ButtonGroup aria-label='Basic example'>
+                        <Button variant='secondary'>
+                            {isLogin ? 'Login' : 'Create Account'}
+                        </Button>
+                        <Button
+                            variant='outline-secondary'
+                            onClick={switchAuthModeHandler}>
+                            {isLogin
+                                ? 'Create account'
+                                : 'Login with existing account'}
+                        </Button>
+                    </ButtonGroup>
                 </div>
             </form>
         </section>
