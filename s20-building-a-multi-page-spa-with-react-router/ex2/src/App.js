@@ -15,10 +15,10 @@ function App() {
             <div className='container'>
                 <Suspense
                     fallback={
-                        <p>
+                        <div>
                             <LoadingSpinner />
                             Loading...
-                        </p>
+                        </div>
                     }>
                     <Switch>
                         <Route path='/' exact>
