@@ -1,9 +1,8 @@
 import CommentItem from './CommentItem'
-import classes from './CommentsList.module.css'
 
 const CommentsList = (props) => {
     return (
-        <ul className={classes.comments}>
+        <ul className='list-group'>
             {props.comments.map((comment) => (
                 <CommentItem key={comment.id} text={comment.text} />
             ))}

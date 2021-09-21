@@ -1,21 +1,62 @@
-import { useState } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import NewCommentForm from './NewCommentForm'
+import { useParams } from 'react-router-dom'
+import useHttp from '../../hooks/use-http'
+import { getAllComments } from '../../lib/api'
+import LoadingSpinner from '../UI/LoadingSpinner'
+import CommentsList from './CommentsList'
 
 const Comments = () => {
     const [isAddingComment, setIsAddingComment] = useState(false)
+    const params = useParams()
+
+    const {
+        sendRequest,
+        status,
+        data: loadedComments
+    } = useHttp(getAllComments)
+
+    const { quoteId } = params
+
+    useEffect(() => {
+        sendRequest(quoteId)
+    }, [sendRequest, quoteId])
 
     const startAddCommentHandler = () => {
         setIsAddingComment(true)
     }
 
+    const addedCommentHandler = useCallback(() => {
+        sendRequest(quoteId)
+    }, [sendRequest, quoteId])
+
+    let comments
+    if (status === 'pending') {
+        comments = (
+            <div className='loadingcomments'>
+                <LoadingSpinner />
+            </div>
+        )
+    }
+
+    if (
+        status === 'completed' &&
+        (loadedComments || loadedComments.length > 0)
+    ) {
+        comments = <CommentsList comments={loadedComments} />
+    }
+
+    if (
+        status === 'completed' &&
+        (!loadedComments || loadedComments.length === 0)
+    ) {
+        comments = <p>No comments yet... Be the first to comment.</p>
+    }
+
     return (
         <section className='comments'>
             <h5 className='cinzel'>User Comments</h5>
-            <ul className='list-group'>
-                <li className='list-group-item'>Tive o grato prazer de conversar alguns minutos com JPB em Dezembro último</li>
-                <li className='list-group-item'>Que grandes prazeres me dão estes teus artigos tão verdadeiros e comoventes! Abraço</li>
-                <li className='list-group-item'>Só para gente fina e erudita: Χάρηκα που τα είπαμε</li>
-            </ul>
+            {comments}
             {!isAddingComment && (
                 <button
                     className='btn btn-sm btn-info mt-3'
@@ -23,7 +64,12 @@ const Comments = () => {
                     Add a Comment
                 </button>
             )}
-            {isAddingComment && <NewCommentForm />}
+            {isAddingComment && (
+                <NewCommentForm
+                    quoteId={quoteId}
+                    onAddedComment={addedCommentHandler}
+                />
+            )}
         </section>
     )
 }

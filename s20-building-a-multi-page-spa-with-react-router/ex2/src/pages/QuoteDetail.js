@@ -51,7 +51,7 @@ const QuoteDetail = () => {
         <div className='quotedetail'>
             <HighlightedQuote text={loadedQuote.text} author={loadedQuote.author} />
             {/* This hides the button if the comments are visible */}
-            <Route path={match.path}>
+            <Route path={match.path} exact>
                 {/* The button to comments itself gets hidden */}
                 <Link
                     className='btn btn-sm btn-info'

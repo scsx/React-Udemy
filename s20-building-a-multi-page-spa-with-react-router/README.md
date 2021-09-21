@@ -2,9 +2,12 @@
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/
 
 
-### Ex 1
+### Preview Ex 1
 Used Bulma for styles.
-![alt text](ex1.png)
-
+![preview](ex1.png)
 
 ### Preview Ex 2
+Routing, forms and backend with Firebase
+![preview](ex2.1.png)
+![preview](ex2.2.png)
+![preview](ex2.3.png)

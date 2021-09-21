@@ -1,27 +1,43 @@
-import { useRef } from 'react'
-
+import { useRef, useEffect } from 'react'
 import classes from './NewCommentForm.module.css'
+import useHttp from '../../hooks/use-http'
+import { addComment } from '../../lib/api'
+import LoadingSpinner from '../../components/UI/LoadingSpinner'
 
 const NewCommentForm = (props) => {
     const commentTextRef = useRef()
+    const { sendRequest, status, error } = useHttp(addComment)
+    const { onAddedComment } = props
+
+    useEffect(() => {
+        if (status === 'completed' && !error) {
+            onAddedComment()
+        }
+    }, [status, error, onAddedComment])
 
     const submitFormHandler = (event) => {
         event.preventDefault()
-        // optional: Could validate here
+        const enteredText = commentTextRef.current.value
 
-        // send comment to server
+        sendRequest({
+            commentData: { text: enteredText },
+            quoteId: props.quoteId
+        })
+
+        commentTextRef.current.value = ''
     }
 
     return (
         <form className={classes.form} onSubmit={submitFormHandler}>
+            {status === 'pending' && <LoadingSpinner />}
             <div className={classes.control} onSubmit={submitFormHandler}>
                 <label className='cinzel mt-4' htmlFor='comment'>
                     Your Comment
                 </label>
-                <textarea id='comment' rows='5' ref={commentTextRef}></textarea>
+                <textarea id='comment' rows='2' ref={commentTextRef}></textarea>
             </div>
-            <div className={classes.actions}>
-                <button className='btn btn-info mt-2'>Add Comment</button>
+            <div className='actions'>
+                <button className='btn btn-info btn-sm mt-2'>Add Comment</button>
             </div>
         </form>
     )

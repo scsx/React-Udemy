@@ -11,7 +11,7 @@ const QuoteItem = (props) => {
                 </blockquote>
                 <figcaption>{props.author}</figcaption>
             </figure>
-            <Link to={`/quotes/${props.id}/quotedetail`} className='btn btn-sm btn-info'>View</Link>
+            <Link to={`/quotes/${props.id}`} className='btn btn-sm btn-info'>View</Link>
         </li>
     )
 }
