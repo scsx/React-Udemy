@@ -38,6 +38,10 @@
     color: #45a29e;
 }
 
+.cwhite {
+    color: white;
+}
+
 .btn.btn-primary {
     background-color: #66fcf1;
     color: #fff;

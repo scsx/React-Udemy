@@ -1,9 +1,10 @@
 import { useState, useRef, useContext } from 'react'
 import { ButtonGroup, Button, Spinner } from 'react-bootstrap'
+import { useHistory } from 'react-router-dom'
 import AuthContext from '../../store/auth-context'
-import classes from './AuthForm.module.css'
 
 const AuthForm = () => {
+    const history = useHistory()
     const emailInputRef = useRef()
     const passwordInputRef = useRef()
     const authCtx = useContext(AuthContext)
@@ -56,7 +57,7 @@ const AuthForm = () => {
             })
             .then((data) => {
                 authCtx.login(data.idToken)
-                console.log(data)
+                history.replace('/')
             })
             .catch((err) => {
                 alert(err.message)
@@ -64,10 +65,10 @@ const AuthForm = () => {
     }
 
     return (
-        <section className='authlogin begg cgrey'>
+        <section className='box authlogin begg cgrey'>
             <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
             <form onSubmit={submitHandler}>
-                <div className={classes.control}>
+                <div className='control'>
                     <label htmlFor='email'>Your Email</label>
                     <input
                         type='email'
@@ -76,7 +77,7 @@ const AuthForm = () => {
                         required
                     />
                 </div>
-                <div className={classes.control}>
+                <div className='control'>
                     <label htmlFor='password'>
                         {isLogin ? 'Your Password' : 'Create Password'}
                     </label>
@@ -87,7 +88,7 @@ const AuthForm = () => {
                         required
                     />
                 </div>
-                <div className={classes.actions}>
+                <div className='actions'>
                     <ButtonGroup aria-label='Basic example'>
                         <Button variant='secondary' type='submit'>
                             {!isLoading && isLogin ? 'Login' : ''}

@@ -27,6 +27,14 @@ a {
     box-shadow: none !important;
 }
 
+.box {
+    margin: 3rem auto;
+    max-width: 25rem;
+    border-radius: 6px;
+    box-shadow: 0 10px 10px rgb(0 0 0 / 20%);
+    padding: 2rem;
+}
+
 /* HEADER */
 .mainheader.bblack {
     border-bottom: 1px solid #303f50;
@@ -63,15 +71,22 @@ a {
     padding: .375rem 1.5rem
 }
 
-/* LOGIN */
-.authlogin {
+/* START */
+.starting {
     margin: 3rem auto;
-    max-width: 25rem;
-    border-radius: 6px;
-    box-shadow: 0 10px 10px rgb(0 0 0 / 20%);
-    padding: 2rem;
+    max-width: 50%;
+    text-align: center;
 }
 
+.starting h1 {
+    font-size: 8rem;
+}
+
+.starting hr {
+    margin: 2rem;
+}
+
+/* LOGIN */
 .authlogin h1 {
     margin: 0 0 2rem 0;
 }
@@ -93,4 +108,52 @@ a {
     margin-right: .5rem;
     width: 1.3rem;
     height: 1.3rem;
+}
+
+.control {
+    margin-bottom: 0.5rem;
+}
+
+.control label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.control input {
+    font: inherit;
+    border-radius: 4px;
+    border: 1px solid #999;
+    width: 100%;
+    text-align: left;
+    padding: 0.25rem;
+}
+
+.actions {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.actions .toggle {
+    margin-top: 1rem;
+    background-color: transparent;
+    color: #9f5ccc;
+    border: none;
+    padding: 0.15rem 1.5rem;
+}
+
+.actions .toggle:hover {
+    background-color: transparent;
+    color: #ae82cc;
+}
+
+/* Profile */
+.profile input {
+    font: inherit;
+    border-radius: 4px;
+    border: 1px solid #999;
+    width: 100%;
+    text-align: left;
+    padding: 0.25rem;
 }

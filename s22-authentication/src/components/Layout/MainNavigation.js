@@ -7,6 +7,11 @@ const MainNavigation = () => {
     const authCtx = useContext(AuthContext)
     const isLoggedIn = authCtx.isLoggedIn
 
+    const logoutHandler = () => {
+        authCtx.logout()
+        // optional: redirect the user
+    }
+
     return (
         <div className='mainheader bblack'>
             <Container>
@@ -26,9 +31,10 @@ const MainNavigation = () => {
                                     <Link to='/profile'>Profile</Link>
                                 </li>
                             )}
+                            {isLoggedIn && 'IN'}
                             {isLoggedIn && (
                                 <li>
-                                    <Button variant='outline-primary'>
+                                    <Button variant='outline-primary' onClick={logoutHandler}>
                                         Logout
                                     </Button>
                                 </li>
