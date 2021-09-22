@@ -6,14 +6,15 @@ import './App.css'
 
 const App = () => {
     const [courseGoals, setCourseGoals] = useState([
-        { text: 'Do all exercises!', id: 'g1' },
-        { text: 'Finish the course!', id: 'g2' }
+        { text: 'Do all exercises', id: 'g1' },
+        { text: 'Finish the course', id: 'g2' },
+        { text: 'Learn Redux', id: 'g3' }
     ])
 
     const addGoalHandler = (enteredText) => {
         setCourseGoals((prevGoals) => {
             const updatedGoals = [...prevGoals]
-            updatedGoals.unshift({ text: enteredText, id: 'goal1' })
+            updatedGoals.unshift({ text: enteredText, id: 'g' + (prevGoals.length + 1).toString() })
             return updatedGoals
         })
     }

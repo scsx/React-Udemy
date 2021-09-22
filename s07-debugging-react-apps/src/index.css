@@ -8,6 +8,7 @@ html {
 
 body {
     margin: 0;
+    background-color: #e1e2e3;
 }
 
 .button {
@@ -17,7 +18,6 @@ body {
     border: 1px solid #8b005d;
     color: white;
     background: #8b005d;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.26);
     cursor: pointer;
 }
 
@@ -27,13 +27,19 @@ body {
 
 .button:hover,
 .button:active {
-    background: #ac0e77;
-    border-color: #ac0e77;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.26);
+    border: 1px solid #b2197f;
+    color: white;
+    background: #d9229c;
 }
 
 @media (min-width: 768px) {
     .button {
         width: auto;
     }
+}
+
+.goal-item.list-group-item:hover {
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
 }

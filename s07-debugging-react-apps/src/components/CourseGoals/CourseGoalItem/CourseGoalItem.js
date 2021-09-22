@@ -7,7 +7,8 @@ const CourseGoalItem = (props) => {
 
     return (
         <li className='goal-item list-group-item' onClick={deleteHandler}>
-            {props.children}
+            <h5 className='m-0'>{props.children}</h5>
+            <p className='m-0'>id: {props.dataKey}</p>
         </li>
     )
 }
