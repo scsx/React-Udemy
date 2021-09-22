@@ -1,30 +1,38 @@
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { Container, Button } from 'react-bootstrap'
-import classes from './MainNavigation.module.css'
+import AuthContext from '../../store/auth-context'
 
 const MainNavigation = () => {
+    const authCtx = useContext(AuthContext)
+    const isLoggedIn = authCtx.isLoggedIn
+
     return (
-        <div className='bblack'>
+        <div className='mainheader bblack'>
             <Container>
-                <header className={classes.header}>
+                <header className='header'>
                     <Link to='/'>
-                        <div className={classes.logo + ' cblue'}>
-                            React Auth
-                        </div>
+                        <h2 className='cblue mt-1'>React Auth</h2>
                     </Link>
                     <nav>
                         <ul>
-                            <li>
-                                <Link to='/auth'>Login</Link>
-                            </li>
-                            <li>
-                                <Link to='/profile'>Profile</Link>
-                            </li>
-                            <li>
-                                <Button variant='outline-primary'>
-                                    Logout
-                                </Button>
-                            </li>
+                            {!isLoggedIn && (
+                                <li>
+                                    <Link to='/auth'>Login</Link>
+                                </li>
+                            )}
+                            {isLoggedIn && (
+                                <li>
+                                    <Link to='/profile'>Profile</Link>
+                                </li>
+                            )}
+                            {isLoggedIn && (
+                                <li>
+                                    <Button variant='outline-primary'>
+                                        Logout
+                                    </Button>
+                                </li>
+                            )}
                         </ul>
                     </nav>
                 </header>

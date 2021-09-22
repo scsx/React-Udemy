@@ -23,9 +23,43 @@ a {
     text-decoration: none;
 }
 
-/* HEADER */
+.btn:focus {
+    box-shadow: none !important;
+}
 
-header .btn.btn-outline-primary {
+/* HEADER */
+.mainheader.bblack {
+    border-bottom: 1px solid #303f50;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: baseline;
+}
+
+.header li {
+    margin: 0 1rem;
+}
+
+.header a {
+    color: #fff;
+}
+
+.header a:hover {
+    color: #66fcf1;
+}
+
+.header .btn.btn-outline-primary {
     padding: .375rem 1.5rem
 }
 
@@ -49,4 +83,14 @@ header .btn.btn-outline-primary {
 
 .authlogin .btn-group .btn {
     width: 50%;
+}
+
+.authlogin .btn-group .btn:hover {
+    width: 50%;
+}
+
+.authlogin .spinner-border {
+    margin-right: .5rem;
+    width: 1.3rem;
+    height: 1.3rem;
 }
