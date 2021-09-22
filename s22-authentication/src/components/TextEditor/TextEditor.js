@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import { Editor, EditorState, RichUtils } from 'draft-js'
 import { ButtonGroup, Button } from 'react-bootstrap'
 import 'draft-js/dist/Draft.css'
+import { ReactComponent as Undo } from '../../img/undo.svg'
+import { ReactComponent as Redo } from '../../img/redo.svg'
+
 
 const TextEditor = () => {
     const [editorState, setEditorState] = useState(() =>
@@ -36,7 +39,7 @@ const TextEditor = () => {
         <section className='starting editor'>
             <h1 className='cblue'>Editor</h1>
 
-            <ButtonGroup className='mb-1'>
+            <ButtonGroup>
                 <Button
                     variant='secondary'
                     onClick={(e) => handleToggleClick(e, 'BOLD')}>
@@ -52,10 +55,35 @@ const TextEditor = () => {
                     onClick={(e) => handleToggleClick(e, 'STRIKETHROUGH')}>
                     <span className='strike'>S</span>
                 </Button>
+                {/* 
                 <Button
                     variant='secondary'
                     onClick={(e) => handleToggleClick(e, 'header-one')}>
                     H1
+                </Button>
+                <Button
+                    variant='secondary'
+                    onClick={(e) => handleToggleClick(e, 'ordered-list-item')}>
+                    ol
+                </Button>
+                 */}
+            </ButtonGroup>
+            <ButtonGroup>
+                <Button
+                    variant='secondary'
+                    disabled={editorState.getUndoStack().size <= 0}
+                    onClick={() =>
+                        setEditorState(EditorState.undo(editorState))
+                    }>
+                    <Undo className='icon'/>
+                </Button>
+                <Button
+                    variant='secondary'
+                    disabled={editorState.getRedoStack().size <= 0}
+                    onClick={() =>
+                        setEditorState(EditorState.redo(editorState))
+                    }>
+                    <Redo className='icon'/>
                 </Button>
             </ButtonGroup>
             <div onClick={focusEditor}>
@@ -66,7 +94,7 @@ const TextEditor = () => {
                     onChange={(editorState) => setEditorState(editorState)}
                 />
             </div>
-            <p className='cwhite mt-3'>
+            <p className='cgreen mt-3'>
                 https://so99ynoodles.com/en/blog/make-wysiwyg-editor-with-draft-js
             </p>
         </section>

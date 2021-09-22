@@ -12,6 +12,7 @@ function App() {
 
     return (
         <Layout>
+            <div className='gradient'></div>
             <Switch>
                 <Route path='/' exact>
                     <HomePage />
