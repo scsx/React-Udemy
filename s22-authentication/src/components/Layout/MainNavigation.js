@@ -21,6 +21,9 @@ const MainNavigation = () => {
                     </Link>
                     <nav>
                         <ul>
+                            <li>
+                                <Link to='/text'>wysiwyg</Link>
+                            </li>
                             {!isLoggedIn && (
                                 <li>
                                     <Link to='/auth'>Login</Link>
@@ -31,10 +34,11 @@ const MainNavigation = () => {
                                     <Link to='/profile'>Profile</Link>
                                 </li>
                             )}
-                            {isLoggedIn && 'IN'}
                             {isLoggedIn && (
                                 <li>
-                                    <Button variant='outline-primary' onClick={logoutHandler}>
+                                    <Button
+                                        variant='outline-primary'
+                                        onClick={logoutHandler}>
                                         Logout
                                     </Button>
                                 </li>

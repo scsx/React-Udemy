@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import Layout from './components/Layout/Layout'
 import UserProfile from './components/Profile/UserProfile'
+import TextEditor from './components/TextEditor/TextEditor'
 import AuthPage from './pages/AuthPage'
 import HomePage from './pages/HomePage'
 import AuthContext from './store/auth-context'
@@ -26,6 +27,9 @@ function App() {
                     {!authCtx.isLoggedIn && <Redirect to='/auth' />}
                 </Route>
                 {/* General redirect for wrong urls */}
+                <Route path='/text'>
+                    <TextEditor />
+                </Route>
                 <Route path='*'>
                     <Redirect to='/' />
                 </Route>

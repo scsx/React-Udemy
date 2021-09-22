@@ -1,0 +1,14 @@
+.editor.starting {
+    text-align: left;
+}
+
+.editor .DraftEditor-editorContainer {
+    background-color: #fff;
+    min-height: 6rem;
+    padding: .5rem;
+    border-radius: .25rem;
+}
+
+span.strike {
+    text-decoration: line-through;
+}
