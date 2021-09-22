@@ -1,0 +1,14 @@
+.formcontrol label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.formcontrol.invalid input {
+    border-color: red;
+    background: #ffd7d7;
+}
+
+.formcontrol.invalid label {
+    color: red;
+}
