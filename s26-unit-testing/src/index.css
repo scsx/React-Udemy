@@ -12,10 +12,13 @@ code {
         monospace;
 }
 
+table {
+    max-width: 80%;
+    margin: 2rem auto;
+}
+
 ul.ul {
     list-style: none;
-    margin: 2rem auto;
     border: 1px solid #ccc;
     padding: 1rem;
-    max-width: 80%;
 }
